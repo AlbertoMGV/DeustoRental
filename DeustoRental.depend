@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523890722 source:c:\users\iñigo\desktop\prog 4\deustorental\cliente.c
+1523893612 source:c:\users\iñigo\desktop\prog 4\deustorental\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,4 +22,18 @@
 	"Cliente.h"
 
 1523860332 c:\users\iñigo\desktop\prog 4\deustorental\administrador.h
+
+1523860332 source:c:\users\iñigo\desktop\prog 4\deustorental\administrador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Administrador.h"
+
+1523893612 source:c:\users\iñigo\desktop\prog 4\deustorental\agencia.c
+	<stdio.h>
+	<stdlib.h>
+	"Agencia.h"
+	"string.h"
+
+1523893612 c:\users\iñigo\desktop\prog 4\deustorental\agencia.h
 
