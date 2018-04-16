@@ -13,5 +13,6 @@ typedef struct{
 
 } Coche;
 
+Coche crearCoche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo);
 
 #endif // COCHE_H_INCLUDED
