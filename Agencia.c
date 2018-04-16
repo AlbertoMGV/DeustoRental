@@ -22,4 +22,4 @@ Agencia* crearAgencia(int CP, char* ciudad, char* pais, char* direccion, int cod
 };
 
 Agencia** leerAgencia();
-Agencia** modificarAgencia();
+Agencia* modificarAgencia();

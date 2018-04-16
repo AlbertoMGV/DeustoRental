@@ -13,5 +13,5 @@ Reserva** leerReservas(){
 }
 
 
-Reserva** modificarReserva();
+Reserva* modificarReserva();
 

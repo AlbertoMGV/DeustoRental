@@ -28,5 +28,5 @@ Coche** leerCoches(){
 
 }
 
-Coche** modificarCoches();
+Coche* modificarCoches();
 

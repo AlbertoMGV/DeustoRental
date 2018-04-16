@@ -16,7 +16,7 @@ typedef struct{
 Coche* crearCoche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo);
 Coche** leerCoches();
 
-Coche** modificarCoches();
+Coche* modificarCoches();
 
 
 #endif // COCHE_H_INCLUDED
