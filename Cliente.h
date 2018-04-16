@@ -10,6 +10,7 @@ typedef struct{
     char* dni;
 
 } Cliente;
-
 Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, char* dni);
+Cliente** leerCliente();
+Cliente** modificarCliente();
 #endif // CLIENTE_H_INCLUDED

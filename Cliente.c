@@ -21,3 +21,5 @@ Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, c
 
     return c;
 }
+Cliente** leerCliente();
+Cliente** modificarCliente();

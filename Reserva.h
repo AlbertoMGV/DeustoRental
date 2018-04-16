@@ -17,6 +17,7 @@ typedef struct{
 } Reserva;
 
 Reserva* crearReserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia);
-
+Reserva** leerReservas();
+Reserva** modificarReserva();
 
 #endif // RESERVA_H_INCLUDED
