@@ -4,7 +4,7 @@
 #include "Cliente.h"
 
 
-Cliente crearCliente(char* nombre, char* apellido, int edad, char* direccion, char* dni){
+Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, char* dni){
     Cliente *c = (Cliente*) malloc(sizeof(Cliente));
     c->nombre = malloc(strlen(nombre) + 1);
     c->apellido = malloc(strlen(apellido) + 1);
@@ -16,4 +16,6 @@ Cliente crearCliente(char* nombre, char* apellido, int edad, char* direccion, ch
     strcpy(c->dni, dni);
 
     //almacenar a bd / archivo de texto
+
+    return c;
 }

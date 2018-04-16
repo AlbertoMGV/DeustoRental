@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Coche.h"
 
-Coche crearCoche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo){
+Coche* crearCoche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo){
     Coche *c = (Coche*) malloc(sizeof(Coche));
     c->marca = malloc(strlen(marca) + 1);
     c->modelo = malloc(strlen(modelo) + 1);
@@ -15,4 +15,6 @@ Coche crearCoche(char* marca, char* modelo, char* matricula, float kilometraje, 
     strcpy(c->tipo, tipo);
 
     //almacenar a bd / archivo de texto
+
+    return c;
 }
