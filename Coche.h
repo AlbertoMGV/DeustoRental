@@ -3,16 +3,15 @@
 
 typedef struct{
 
-XXX marca;
-XXX modelo;
-XXX matricula;
-int kilometraje;
-int capacidad;
-int usuarios;
-XXX tipo;
+    char* marca;
+    char* modelo;
+    char* matricula;
+    float kilometraje;
+    int capacidad;
+    int usuarios;
+    char* tipo;
 
 } Coche;
-
 
 
 #endif // COCHE_H_INCLUDED

@@ -1,14 +1,18 @@
 #ifndef RESERVA_H_INCLUDED
 #define RESERVA_H_INCLUDED
 
+#include "Cliente.h"
+#include "Agencia.h"
+#include "Coche.h"
+
 typedef struct{
 
-XXX ID;
-XXX DNI_C;
-XXX matricula;
-XXX COD_A;
-XXX fecha_i;
-XXX fecha_f;
+    int id;
+    Cliente cliente;
+    Coche coche;
+    Agencia agencia;
+    char* fecha_i;
+    char* fecha_f;
 
 } Reserva;
 

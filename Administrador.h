@@ -3,8 +3,8 @@
 
 typedef struct{
 
-XXX ID;
-XXX email;
+    int id;
+    char* email;
 
 } Administrador;
 

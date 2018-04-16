@@ -3,11 +3,11 @@
 
 typedef struct{
 
-XXX nombre;
-XXX apellido;
-int edad;
-XXX direccion;
-XXX DNI_C;
+    char* nombre;
+    char* apellido;
+    int edad;
+    char* direccion;
+    char* dni;
 
 } Cliente;
 

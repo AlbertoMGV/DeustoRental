@@ -3,11 +3,11 @@
 
 typedef struct{
 
-XXX CP;
-XXX ciudad;
-XXX pais;
-int direccion;
-int COD_A;
+    int CP;
+    char* ciudad;
+    char* pais;
+    char* direccion;
+    int codigo;
 
 } Agencia;
 
