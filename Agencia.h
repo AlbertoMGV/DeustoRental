@@ -11,4 +11,6 @@ typedef struct{
 
 } Agencia;
 
+Agencia* crearAgencia(int CP, char* ciudad, char* pais, char* direccion, int codigo);
+
 #endif // AGENCIA_H_INCLUDED

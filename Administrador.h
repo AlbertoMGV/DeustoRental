@@ -8,4 +8,6 @@ typedef struct{
 
 } Administrador;
 
+Administrado* crearAdministrador(int id, char* email);
+
 #endif // ADMINISTRADOR_H_INCLUDED
