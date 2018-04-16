@@ -7,13 +7,13 @@
 
 1523893612 c:\users\iñigo\desktop\prog 4\deustorental\cliente.h
 
-1523890722 source:c:\users\iñigo\desktop\prog 4\deustorental\coche.c
+1523893917 source:c:\users\iñigo\desktop\prog 4\deustorental\coche.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Coche.h"
 
-1523890722 c:\users\iñigo\desktop\prog 4\deustorental\coche.h
+1523893917 c:\users\iñigo\desktop\prog 4\deustorental\coche.h
 
 1523860332 source:c:\users\iñigo\desktop\prog 4\deustorental\main.c
 	<stdio.h>
@@ -36,4 +36,14 @@
 	"string.h"
 
 1523893612 c:\users\iñigo\desktop\prog 4\deustorental\agencia.h
+
+1523893917 source:c:\users\iñigo\desktop\prog 4\deustorental\reserva.c
+	<stdio.h>
+	<stdlib.h>
+	"Reserva.h"
+
+1523893917 c:\users\iñigo\desktop\prog 4\deustorental\reserva.h
+	"Cliente.h"
+	"Agencia.h"
+	"Coche.h"
 
