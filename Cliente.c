@@ -65,7 +65,7 @@ Cliente** leerCliente(){
     {
         perror ( filename );
     }
-    return 0;
+    ;
 }
 Cliente* modificarCliente();
 
