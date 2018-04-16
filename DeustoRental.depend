@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1523890722 source:c:\users\iñigo\desktop\prog 4\deustorental\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Cliente.h"
+
+1523890722 c:\users\iñigo\desktop\prog 4\deustorental\cliente.h
+
+1523890722 source:c:\users\iñigo\desktop\prog 4\deustorental\coche.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Coche.h"
+
+1523890722 c:\users\iñigo\desktop\prog 4\deustorental\coche.h
+
+1523870806 source:c:\users\iñigo\desktop\prog 4\deustorental\main.c
+	<stdio.h>
+	<stdlib.h>
+
