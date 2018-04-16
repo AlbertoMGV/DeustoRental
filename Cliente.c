@@ -10,6 +10,8 @@ Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, c
     c->apellido = malloc(strlen(apellido) + 1);
     c->direccion = malloc(strlen(direccion) + 1);
     c->dni = malloc(strlen(dni) + 1);
+    c->edad = edad;
+
     strcpy(c->nombre, nombre);
     strcpy(c->apellido, apellido);
     strcpy(c->direccion, direccion);

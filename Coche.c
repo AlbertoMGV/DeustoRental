@@ -9,6 +9,9 @@ Coche* crearCoche(char* marca, char* modelo, char* matricula, float kilometraje,
     c->modelo = malloc(strlen(modelo) + 1);
     c->matricula = malloc(strlen(matricula) + 1);
     c->tipo = malloc(strlen(tipo) + 1);
+    c->kilometraje = kilometraje;
+    c->capacidad = capacidad;
+    c->usuarios = usuarios;
     strcpy(c->marca, marca);
     strcpy(c->modelo, modelo);
     strcpy(c->matricula, matricula);
