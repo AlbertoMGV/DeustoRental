@@ -9,5 +9,7 @@ typedef struct{
 } Administrador;
 
 Administrador* crearAdministrador(int id, char* email);
+Administrador** leerAdministrador();
+Administrador** modificarAdministrador();
 
 #endif // ADMINISTRADOR_H_INCLUDED
