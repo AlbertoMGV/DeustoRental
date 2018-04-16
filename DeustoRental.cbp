@@ -31,6 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Administrador.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Administrador.h" />
+		<Unit filename="Agencia.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Agencia.h" />
+		<Unit filename="Cliente.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Cliente.h" />
+		<Unit filename="Coche.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Coche.h" />
+		<Unit filename="Reserva.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Reserva.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
