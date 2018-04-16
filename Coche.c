@@ -21,3 +21,10 @@ Coche* crearCoche(char* marca, char* modelo, char* matricula, float kilometraje,
 
     return c;
 }
+
+Coche** leerCoches(){
+
+    //leer del archivo de texto y devolver array
+
+}
+
