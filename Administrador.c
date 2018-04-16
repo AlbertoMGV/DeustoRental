@@ -5,10 +5,8 @@
 Administrado* crearAdministrador(int id, char* email){
     Administrador *a = (Administrador*) malloc(sizeof(Administrador));
 
-    a->id = malloc(strlen(id) + 1);
     a->email = malloc(strlen(email) + 1);
 
-    strcpy(a->id, id);
     strcpy(a->email, email);
 
     return a;
