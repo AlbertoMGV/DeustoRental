@@ -1,1 +1,6 @@
 Ivan,Sanchez,18,Calle Falsa 123,45892794C
+Alberto,Miranda,20,Calle Azul 12,42156354Y
+Inigo,de Mingo,86,Calle Correos 1,41256352N
+Juan,Carlos,142,Palacio Zarzuela,12345678R
+Pedro, Garcia,12,Barrio Michel 12,63524152X
+Rita,Barbera,56,Calle Cielo 1,36987412T

@@ -8,6 +8,7 @@ typedef struct{
     int edad;
     char* direccion;
     char* dni;
+    //char* pass;
 
 } Cliente;
 Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, char* dni);

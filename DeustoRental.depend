@@ -47,3 +47,109 @@
 	"Agencia.h"
 	"Coche.h"
 
+1524476937 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Cliente.h"
+
+1524472196 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\cliente.h
+
+1523909480 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\coche.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Coche.h"
+
+1523909480 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\coche.h
+
+1524472959 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\administrador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Administrador.h"
+
+1524472870 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\administrador.h
+
+1523909480 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\agencia.c
+	<stdio.h>
+	<stdlib.h>
+	"Agencia.h"
+	"string.h"
+
+1523909480 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\agencia.h
+
+1523909480 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\reserva.c
+	<stdio.h>
+	<stdlib.h>
+	"Reserva.h"
+
+1523909480 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\reserva.h
+	"Cliente.h"
+	"Agencia.h"
+	"Coche.h"
+
+1524476909 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<stdbool.h>
+	"Administrador.h"
+	"Cliente.h"
+	"sqlite3.h"
+	<unistd.h>
+
+1418138469 source:c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\sqlite3.c
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	<tcl.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+
+1418138469 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\sqlite3.h
+	<stdarg.h>
+

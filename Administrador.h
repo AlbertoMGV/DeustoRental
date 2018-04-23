@@ -5,10 +5,11 @@ typedef struct{
 
     int id;
     char* email;
+    char* pass;
 
 } Administrador;
 
-Administrador* crearAdministrador(int id, char* email);
+Administrador* crearAdministrador(int id, char* email, char* pass);
 Administrador** leerAdministrador();
 Administrador* modificarAdministrador();
 

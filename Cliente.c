@@ -33,7 +33,7 @@ Cliente* crearCliente(char* nombre, char* apellido, int edad, char* direccion, c
 Cliente** leerCliente(){
     Cliente** clientes;
     clientes = malloc(sizeof(Cliente*) * 25);
-    static const char filename[] = "F:\\Documentos\\Deusto\\PROG4\\DeustoRental\\clientes.txt"; //Cambiar por el adecuado
+    static const char filename[] = "clientes.txt"; //Cambiar por el adecuado
     FILE *file = fopen ( filename, "r" );
     if ( file != NULL )
     {
@@ -42,6 +42,11 @@ Cliente** leerCliente(){
         parametros = malloc(5 * sizeof(char*));
         int i;
         int j = 0;
+
+
+        printf("Listado de Clientes:\n");
+        printf("Nombre | Direccion | Edad | DNI\n");
+        printf("--------------------------------\n");
 
         while ( fgets ( line, sizeof line, file ) != NULL ) /* Leer una linea */
         {
@@ -58,6 +63,7 @@ Cliente** leerCliente(){
             imprimirCliente(clientes[j]); //Para testeo
             j++;
         }
+        printf("--------------------------------\n");
         fclose ( file );
         return clientes; /*Devolver array de clientes*/
     }
@@ -70,5 +76,5 @@ Cliente** leerCliente(){
 Cliente* modificarCliente();
 
 void imprimirCliente(Cliente* c){
-    printf("Nombre y Apellido(s): %s %s, Direccion; %s, Edad: %i, DNI: %s ", c->nombre, c->apellido, c->direccion, c->edad, c->dni);
+    printf("%s %s | %s | %i | %s" , c->nombre, c->apellido, c->direccion, c->edad, c->dni);
 }
