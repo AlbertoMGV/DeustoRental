@@ -14,7 +14,7 @@ bool comprobarContraseña(char* pass){
 	if(sizeof(pass) != sizeof(this->pass){
 		return false;
 	}else{
-		return (strcmp(this->pass, pass) == 0 ? false : true);
+		return (strcmp(this->pass, pass) == 0 ? true : false);
 	}
 }
 
