@@ -21,12 +21,12 @@ class Reserva{
         char* getFecha_i();
         char* getFecha_f();
         //Setters
-        void setId();
-        void setCliente();
-        void setCoche();
-        void setAgencia();
-        void setFecha_i();
-        void setFecha_f();
+        void setId(int id);
+        void setCliente(Cliente cliente);
+        void setCoche(Coche coche);
+        void setAgencia(Agencia agencia);
+        void setFecha_i(char* fecha_i);
+        void setFecha_f(char* fecha_f);
 
 };
 

@@ -23,13 +23,13 @@ class Coche{
         int getUsuarios();
         char* getTipo();
         //Setters
-        void getMarca();
-        void getModelo();
-        void getMatricula();
-        void getKilometraje();
-        void getCapacidad();
-        void getUsuarios();
-        void getTipo();
+        void setMarca(char* marca);
+        void setModelo(char* modelo);
+        void setMatricula(char* matricula);
+        void setKilometraje(float kilometraje);
+        void setCapacidad(int capacidad);
+        void setUsuarios(int usuarios);
+        void setTipo(char* tipo);
 
 };
 

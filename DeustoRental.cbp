@@ -51,6 +51,15 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Reserva.h" />
+		<Unit filename="c++/Administrador.cpp" />
+		<Unit filename="c++/Administrador.h" />
+		<Unit filename="c++/Agencia.cpp" />
+		<Unit filename="c++/Agencia.h" />
+		<Unit filename="c++/Cliente.h" />
+		<Unit filename="c++/Coche.cpp" />
+		<Unit filename="c++/Coche.h" />
+		<Unit filename="c++/Reserva.cpp" />
+		<Unit filename="c++/Reserva.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
