@@ -1,5 +1,6 @@
 #include "Coche.h"
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -96,3 +97,10 @@ void Coche::setTipo(string tipo)
 void Coche::setAgencia(Agencia *a) {
     this->agencia = a;
 }
+
+string Coche::toString(){
+    stringstream ss;
+    ss << marca << "," << modelo << "," << matricula << "," << kilometraje << "," << capacidad  << "," << tipo  << "," << agencia << "\n";
+    return ss.str();
+}
+

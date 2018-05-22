@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sstream>
 
 #include "Administrador.h"
 
@@ -33,4 +34,11 @@ void Administrador::setEmail(string email){
 void Administrador::setPass(string pass){
 	this->pass = pass;
 }
+
+string Administrador::toString(){
+    stringstream ss;
+    ss << id << ";" << email << ";" << pass << "\n";
+    return ss.str();
+}
+
 

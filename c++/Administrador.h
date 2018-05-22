@@ -18,6 +18,7 @@ class Administrador{
 		void setId(int id);
 		void setEmail(string email);
 		void setPass(string pass);
+        string toString();
 };
 
 

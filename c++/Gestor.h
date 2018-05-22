@@ -21,12 +21,16 @@ class Gestor{
 		Agencia* getAgencia(int codigo);
 		Agencia** getAgencias();
 		Reserva* getReservas(Cliente* c);
-		void addCoche(Coche* c, Agencia* a);
+        void addReserva(Reserva *r);
+		void addCoche(Coche* c);
         void addAgencia(Agencia* a);
-		void addAdministrador(Administrador a);
+		void addAdministrador(Administrador* a);
         static int countLines(string filename);
 		void registrarCliente(Cliente* c);
-	private:
+        Coche *getCoche(string matricula);
+
+private:
 		bool isAdmin;
+
 };
 #endif

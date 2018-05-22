@@ -138,12 +138,22 @@ void Gestor::addAgencia(Agencia *a) {
 }
 
 Agencia *Gestor::getAgencia(int codigo) {
-    ifstream infile("datos/agencias.dat");
+    Agencia** agencias = getAgencias();
+    for(int i = 0; i < sizeof(agencias) / sizeof(Agencia*); i++){
+        if(agencias[i]->getCodigo() == codigo){
+            return agencias[i];
+        }
+    }
+    return nullptr;
+}
+
+Coche *Gestor::getCoche(string matricula) {
+    ifstream infile("datos/coches.dat");
     string line;
 
     while (getline(infile, line)){
         istringstream ss(line);
-        string* parametros = new string[5];
+        string* parametros = new string[7];
         string valor;
         int i = 0;
 
@@ -151,11 +161,38 @@ Agencia *Gestor::getAgencia(int codigo) {
             parametros[i] = valor;
             i++;
         }
-        if(stoi(parametros[4]) == codigo){
-            Agencia* a = new Agencia(stoi(parametros[0]), parametros[1], parametros[2], parametros[3], stoi(parametros[4]));
-            return a;
+        if(parametros[3].compare(matricula) == 0){
+            Agencia* a = getAgencia(stoi(parametros[6]));
+            Coche* c = new Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], a);
+            return c;
         }
     }
 
     return nullptr;
+}
+
+void Gestor::addCoche(Coche *c) {
+    if(getCoche(c->getMatricula()) == nullptr){
+        ofstream cochesFile;
+        cochesFile.open("datos/coches.dat", ios_base::app);
+        cochesFile << c->toString();
+    } else{
+        cout << "ERROR! COCHE YA EXISTE!" << endl;
+    }
+}
+
+void Gestor::addAdministrador(Administrador* a) {
+    if(getAdministrador(a->getEmail()) == nullptr){
+        ofstream adminFile;
+        adminFile.open("datos/administrador.dat", ios_base::app);
+        adminFile << a->toString();
+    } else{
+        cout << "ERROR! ADMIN YA EXISTE!" << endl;
+    }
+}
+
+void Gestor::addReserva(Reserva *r) {
+    ofstream reservasFile;
+    reservasFile.open("datos/reservas.dat", ios_base::app);
+    reservasFile << r->toString();
 }

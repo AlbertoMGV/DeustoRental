@@ -39,6 +39,7 @@ class Coche{
         void setCapacidad(int capacidad);
         void setAgencia(Agencia* a);
         void setTipo(string tipo);
+        string toString();
 
 };
 

@@ -20,10 +20,7 @@ int main() {
     Agencia* a = new Agencia(48910, "Sestao", "España", "C/ Falsa, 123", 1);
     Coche* coche = new Coche("Ford", "GT", "0454KFD", 1250.3, 2, "Supercoche", a);
     Reserva* r = new Reserva("22/05/2018", "29/05/2018", 2, c, coche, a);
-    Agencia** agencias = gestor->getAgencias();
-    for(int i = 0; i < sizeof(agencias)/ sizeof(Agencia*); i++){
-        cout << agencias[i]->toString() << endl;
-    }
+    gestor->getAgencia(1);
     //cout << c->toString() << endl;
     return 0;
 }
