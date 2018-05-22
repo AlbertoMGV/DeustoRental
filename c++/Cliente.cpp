@@ -59,10 +59,9 @@ void Cliente::setDni(string dni){
 	this->dni = dni;
 }
 
-std::string Cliente::toString(){
-	std::stringstream ss;
+string Cliente::toString(){
+	stringstream ss;
 	ss << id << ", " << email << ", " << nombre << ", " << apellido << ", " << dni << "\n";
-	std::string result = ss.str();
-	return result;
+	return ss.str();
 }
 

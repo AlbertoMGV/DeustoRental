@@ -3,14 +3,14 @@
 
 using namespace std;
 
-Coche::Coche(string marca, string modelo, string matricula, float kilometraje, int capacidad, int usuarios, string tipo){
-	this->marca = marca;
-	this->modelo = modelo;
-	this->matricula = matricula;
-	this->kilometraje = kilometraje;
-	this->capacidad = capacidad;
-	this->usuarios = usuarios;
-	this->tipo = tipo;
+Coche::Coche(string marca, string modelo, string matricula, float kilometraje, int capacidad, string tipo, Agencia* agencia){
+    this->marca = marca;
+    this->modelo = modelo;
+    this->matricula = matricula;
+    this->kilometraje = kilometraje;
+    this->capacidad = capacidad;
+    this->agencia = agencia;
+    this->tipo = tipo;
 }
 Coche::Coche()
 {
@@ -19,8 +19,18 @@ Coche::Coche()
     this->matricula = "";
     this->kilometraje = 0.0F;
     this->capacidad = 0;
-    this->usuarios = 0;
+    this->agencia = new Agencia();
     this->tipo = "";
+}
+Coche::Coche(const Coche &c)
+{
+    this->marca = c.marca;
+    this->modelo = c.modelo;
+    this->matricula = c.matricula;
+    this->kilometraje = c.kilometraje;
+    this->capacidad = c.capacidad;
+    this->agencia = c.agencia;
+    this->tipo = c.tipo;
 }
 Coche::~Coche()
 {
@@ -47,10 +57,7 @@ int Coche::getCapacidad()
 {
     return capacidad;
 }
-int Coche::getUsuarios()
-{
-    return usuarios;
-}
+
 string Coche::getTipo()
 {
     return tipo;
@@ -80,12 +87,12 @@ void Coche::setCapacidad(int capacidad)
     this->capacidad = capacidad;
 
 }
-void Coche::setUsuarios(int usuarios)
-{
-    this->usuarios = usuarios;
 
-}
 void Coche::setTipo(string tipo)
 {
     this->tipo = tipo;
+}
+
+void Coche::setAgencia(Agencia *a) {
+    this->agencia = a;
 }

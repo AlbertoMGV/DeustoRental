@@ -20,6 +20,14 @@ Agencia::Agencia()
     this->codigo = 0;
 
 }
+
+Agencia::Agencia(const Agencia &a) {
+    this->CP = a.CP;
+    this->ciudad = a.ciudad;
+    this->pais = a.pais;
+    this->direccion = a.direccion;
+    this->codigo = a.codigo;
+}
 Agencia::~Agencia()
 {
 
@@ -66,3 +74,5 @@ void Agencia::setCodigo(int codigo)
 {
     this->codigo = codigo;
 }
+
+

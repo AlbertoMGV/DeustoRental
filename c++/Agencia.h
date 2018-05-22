@@ -17,6 +17,7 @@ class Agencia{
 		Agencia(int CP, string ciudad, string pais, string direccion, int codigo);
 		~Agencia();
 		Agencia();
+        Agencia(const Agencia &a);
 		//Getters
 		int getCP();
         string getCiudad();
