@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "Cliente.h"
+#include <sstream>
 
 
 Cliente::Cliente(int id, char* email, char* pass, char* nombre, char* apellido, char* dni){
@@ -14,7 +15,7 @@ Cliente::Cliente(int id, char* email, char* pass, char* nombre, char* apellido, 
 	this->dni = dni;
 }
 
-bool comprobarContrasenya(char* pass){
+Cliente::comprobarContrasenya(char* pass){
 	if(sizeof(pass) != sizeof(this->pass){
 		return false;
 	}else{
@@ -22,36 +23,43 @@ bool comprobarContrasenya(char* pass){
 	}
 }
 
-int getId(){
+int Cliente::getId(){
 	return this->id;
 }
-char* getEmail(){
+char* Cliente::getEmail(){
 	return this->email;
 }
-char* getNombre(){
+char* Cliente::getNombre(){
 	return this->nombre;
 }
-char* getApellido(){
+char* Cliente::getApellido(){
 	return this->apellido;
 }
-char* getDni(){
+char* Cliente::getDni(){
 	return this->dni;
 }
-void setId(int id){
+void Cliente::setId(int id){
 	this->id = id;
 }
-void setEmail(char* email){
+void Cliente::setEmail(char* email){
 	this->email = email;
 }
-void setPass(char* pass){
+void Cliente::setPass(char* pass){
 	this->pass = pass;
 }
-void setNombre(char* nombre){
+void Cliente::setNombre(char* nombre){
 	this->nombre = nombre;
 }
-void setApellido(char* apellido){
+void Cliente::setApellido(char* apellido){
 	this->apellido = apellido;
 }
-void setDni(char* dni){
+void Cliente::setDni(char* dni){
 	this->dni = dni;
+}
+
+std::string Cliente::toString(){
+	std::stringstream ss;
+	ss << id << ", " << email << ", " << nombre << ", " << apellido << ", " << dni << "\n";
+	std::string result = ss.str();
+	return result;
 }

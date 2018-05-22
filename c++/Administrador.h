@@ -11,9 +11,9 @@ class Administrador{
 		bool comprobarContrasenya(char* pass);
 		int getId();
 		char* getEmail();
-		void setId();
-		void setEmail();
-		void setPass();
+		void setId(int id);
+		void setEmail(char* email);
+		void setPass(char* pass);
 };
 
 

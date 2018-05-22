@@ -1,6 +1,8 @@
 #ifndef CLIENTE_H_INCLUDED
 #define CLIENTE_H_INCLUDED
 
+#include <string>
+
 class Cliente{
 	private:
 		int id;
@@ -23,7 +25,7 @@ class Cliente{
 		void setNombre(char* nombre);
 		void setApellido(char* apellido);
 		void setDni(char* dni);
-		
+		std::string toString();
 };
 
 #endif // CLIENTE_H_INCLUDED

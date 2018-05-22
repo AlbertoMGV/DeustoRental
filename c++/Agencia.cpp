@@ -11,49 +11,58 @@ Agencia::Agencia(int CP, char* ciudad, char* pais, char* direccion, int codigo){
 	this->direccion = direccion;
 	this->codigo = codigo;
 }
+Agencia::Agencia()
+{
+    this->CP = 0;
+    this->ciudad = "";
+    this->pais = "";
+    this->direccion = "";
+    this->codigo = 0;
+
+}
 Agencia::~Agencia()
 {
 
 }
 //getters
-int getCP()
+int Agencia::getCP()
 {
     return CP;
 }
-char* getCiudad()
+char* Agencia::getCiudad()
 {
     return ciudad;
 }
-char* getPais()
+char* Agencia::getPais()
 {
     return pais;
 }
-char* getDireccion()
+char* Agencia::getDireccion()
 {
     return direccion;
 }
-int getCodigo()
+int Agencia::getCodigo()
 {
     return codigo;
 }
 //Setters
-void setCP(int CP)
+void Agencia::setCP(int CP)
 {
     this->CP = CP;
 }
-void setCiudad(char* ciudad)
+void Agencia::setCiudad(char* ciudad)
 {
     this->ciudad = ciudad;
 }
-void setPais(char* pais)
+void Agencia::setPais(char* pais)
 {
     this->pais = pais;
 }
-void setDireccion(char* direccion)
+void Agencia::setDireccion(char* direccion)
 {
     this->direccion = direccion;
 }
-void setCodigo(int codigo)
+void Agencia::setCodigo(int codigo)
 {
     this->codigo = codigo;
 }

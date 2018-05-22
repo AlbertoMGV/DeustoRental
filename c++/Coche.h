@@ -12,6 +12,7 @@ class Coche{
         char* tipo;
 	public:
 	    //Cons&Des
+		Coche();
 		Coche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo);
 		~Coche();
 		//Getters

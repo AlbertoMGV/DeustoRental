@@ -3,7 +3,7 @@
 
 class Agencia{
 	private:
-		int CP;
+        int CP;
         char* ciudad;
         char* pais;
         char* direccion;
@@ -12,6 +12,7 @@ class Agencia{
 	    //Cons&Des
 		Agencia(int CP, char* ciudad, char* pais, char* direccion, int codigo);
 		~Agencia();
+		Agencia();
 		//Getters
 		int getCP();
         char* getCiudad();

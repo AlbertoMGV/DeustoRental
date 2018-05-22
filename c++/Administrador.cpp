@@ -10,7 +10,7 @@ Administrador::Administrador(int id, char* email, char* pass){
 	this->pass = pass;
 }
 
-bool comprobarContrasenya(char* pass){
+bool Administrador::comprobarContrasenya(char* pass){
 	if(sizeof(pass) != sizeof(this->pass)){
 		return false;
 	}else{
@@ -18,23 +18,23 @@ bool comprobarContrasenya(char* pass){
 	}
 }
 
-int getId(){
+int Administrador::getId(){
 	return id;
 }
 
-int getEmail(){
+char* Administrador::getEmail(){
 	return email;
 }
 
-void setId(int id){
+void Administrador::setId(int id){
 	this->id = id;
 }
 
-void setEmail(char* email){
+void Administrador::setEmail(char* email){
 	this->email = email;
 }
 
-void setPass(char* pass){
+void Administrador::setPass(char* pass){
 	this->pass = pass;
 }
 

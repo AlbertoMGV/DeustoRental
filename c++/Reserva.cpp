@@ -1,10 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "Reserva.h"
 
-Reserva::Reserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia){
+Reserva::Reserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia) : coche(), cliente(), agencia(){
         this->id=id;
         this->cliente=cliente;
         this->coche=coche;
@@ -12,57 +8,57 @@ Reserva::Reserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche co
         this->fecha_i=fecha_i;
         this->fecha_f=fecha_f;
 }
-Reserva:~Reserva()
+Reserva::~Reserva()
 {
 
 }
 //Getters
-int getId()
+int Reserva::getId()
 {
     return id;
 }
-Cliente getCliente()
+Cliente Reserva::getCliente()
 {
     return cliente;
 }
-Coche getCoche()
+Coche Reserva::getCoche()
 {
     return coche;
 }
-Agencia getAgencia()
+Agencia Reserva::getAgencia()
 {
     return agencia;
 }
-char* getFecha_i()
+char* Reserva::getFecha_i()
 {
     return fecha_i;
 }
-char* getFecha_f()
+char* Reserva::getFecha_f()
 {
     return fecha_f;
 }
 //Setters
-void setId(int id)
+void Reserva::setId(int id)
 {
     this->id=id;
 }
-void setCliente(Cliente cliente)
+void Reserva::setCliente(Cliente cliente)
 {
     this->cliente=cliente;
 }
-void setCoche(Coche coche)
+void Reserva::setCoche(Coche coche)
 {
     this->coche=coche;
 }
-void setAgencia(Agencia agencia)
+void Reserva::setAgencia(Agencia agencia)
 {
     this->agencia=agencia;
 }
-void setFecha_i(char* fecha_i)
+void Reserva::setFecha_i(char* fecha_i)
 {
     this->fecha_i=fecha_i;
 }
-void setFecha_f(char* fecha_f)
+void Reserva::setFecha_f(char* fecha_f)
 {
     this->fecha_f=fecha_f;
 }

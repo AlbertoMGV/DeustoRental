@@ -13,70 +13,80 @@ Coche::Coche(char* marca, char* modelo, char* matricula, float kilometraje, int 
 	this->usuarios = usuarios;
 	this->tipo = tipo;
 }
+Coche::Coche()
+{
+    this->marca = "";
+    this->modelo = "";
+    this->matricula = "";
+    this->kilometraje = 0.0F;
+    this->capacidad = 0;
+    this->usuarios = 0;
+    this->tipo = "";
+}
 Coche::~Coche()
 {
 
 }
 //getters
-char* getMarca()
+char* Coche::getMarca()
 {
     return marca;
 }
-char* getModelo()
+char* Coche::getModelo()
 {
     return modelo;
 }
-char* getMatricula()
+char* Coche::getMatricula()
 {
     return matricula;
 }
-float getKilometraje()
+float Coche::getKilometraje()
 {
     return kilometraje;
 }
-int getCapacidad()
+int Coche::getCapacidad()
 {
     return capacidad;
 }
-int getUsuarios()
+int Coche::getUsuarios()
 {
     return usuarios;
 }
-char* getTipo()
+char* Coche::getTipo()
 {
     return tipo;
 }
 //Setters
-void setMarca(char* marca)
+void Coche::setMarca(char* marca)
 {
     this->marca=marca;
 }
-void setModelo(char* modelo)
+void Coche::setModelo(char* modelo)
 {
     this->modelo = modelo;
 
 }
-void setMatricula(char* matricula)
+void Coche::setMatricula(char* matricula)
 {
     this->matricula = matricula;
 
 }
-void setKilometraje(float kilometraje)
+void Coche::setKilometraje(float kilometraje)
 {
     this->kilometraje = kilometraje;
 
 }
-void setCapacidad(int capacidad)
+void Coche::setCapacidad(int capacidad)
 {
     this->capacidad = capacidad;
 
 }
-void setUsuarios(int usuarios)
+void Coche::setUsuarios(int usuarios)
 {
     this->usuarios = usuarios;
 
 }
-void setTipo(char* tipo)
+void Coche::setTipo(char* tipo)
 {
     this->tipo = tipo;
 }

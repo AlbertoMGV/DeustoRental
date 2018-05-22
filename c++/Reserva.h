@@ -1,6 +1,10 @@
 #ifndef RESERVA_H
 #define RESERVA_H
 
+#include "Cliente.h"
+#include "Agencia.h"
+#include "Coche.h"
+
 class Reserva{
 	private:
 		int id;
