@@ -7,23 +7,23 @@ class Agencia{
         char* ciudad;
         char* pais;
         char* direccion;
-        int codigo;
+        int id;
 	public:
 	    //Cons&Des
-		Agencia(int CP, char* Ciudad, char* pais, char* direccion, int codigo);
+		Agencia(int CP, char* Ciudad, char* pais, char* direccion, int id);
 		~Agencia();
 		//Getters
 		int getCP();
         char* getCiudad();
         char* getPais();
         char* getDireccion();
-        int getCodigo();
+        int getId();
         //Setters
         void setCP();
         void setCiudad();
         void setPais();
         void setDireccion();
-        void setCodigo();
+        void setId();
 
 };
 
