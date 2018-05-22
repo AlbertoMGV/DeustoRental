@@ -30,7 +30,7 @@ class Agencia{
         void setPais(string pais);
         void setDireccion(string direccion);
         void setCodigo(int codigo);
-
+        string toString();
 };
 
 

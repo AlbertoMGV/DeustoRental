@@ -15,15 +15,17 @@ class Gestor{
 	public:
 		Gestor(bool isAdmin);
 		~Gestor();
-		Administrador getAdministrador(string email);
-		Cliente getCliente(string email);
-		Coche* getCoches(Agencia agencia);
-		Agencia getAgencia(int id);
-		Agencia* getAgencias();
-		Reserva* getReservas(Cliente c);
-		void addCoche(Coche c, Agencia a);
+		Administrador* getAdministrador(string email);
+		Cliente* getCliente(string email);
+		Coche** getCoches(Agencia* agencia);
+		Agencia* getAgencia(int codigo);
+		Agencia** getAgencias();
+		Reserva* getReservas(Cliente* c);
+		void addCoche(Coche* c, Agencia* a);
+        void addAgencia(Agencia* a);
 		void addAdministrador(Administrador a);
-		void registrarCliente(Cliente c);
+        static int countLines(string filename);
+		void registrarCliente(Cliente* c);
 	private:
 		bool isAdmin;
 };

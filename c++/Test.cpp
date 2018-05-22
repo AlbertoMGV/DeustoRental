@@ -10,16 +10,21 @@
 #include "Agencia.h"
 #include "Coche.h"
 #include "Reserva.h"
+#include "Gestor.h"
 
 using namespace std;
 
 int main() {
+    Gestor* gestor = new Gestor(true);
     Cliente* c = new Cliente(0, "pepe@gmail.com", "pass", "nombre", "apellido", "dni");
     Agencia* a = new Agencia(48910, "Sestao", "España", "C/ Falsa, 123", 1);
     Coche* coche = new Coche("Ford", "GT", "0454KFD", 1250.3, 2, "Supercoche", a);
     Reserva* r = new Reserva("22/05/2018", "29/05/2018", 2, c, coche, a);
-    cout << r->toString() << endl;
-    test();
+    Agencia** agencias = gestor->getAgencias();
+    for(int i = 0; i < sizeof(agencias)/ sizeof(Agencia*); i++){
+        cout << agencias[i]->toString() << endl;
+    }
+    //cout << c->toString() << endl;
     return 0;
 }
 

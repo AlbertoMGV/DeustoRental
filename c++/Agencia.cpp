@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <sstream>
 
 #include "Agencia.h"
 
@@ -74,5 +72,11 @@ void Agencia::setCodigo(int codigo)
 {
     this->codigo = codigo;
 }
+string Agencia::toString(){
+    stringstream ss;
+    ss << CP << "," << ciudad << "," << pais << "," << direccion << "," << codigo << "\n";
+    return ss.str();
+}
+
 
 
