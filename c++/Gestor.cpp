@@ -196,3 +196,45 @@ void Gestor::addReserva(Reserva *r) {
     reservasFile.open("datos/reservas.dat", ios_base::app);
     reservasFile << r->toString();
 }
+Reserva **Gestor::getReservas() {
+    int nReservas = countLines("datos/reservas.dat");
+    ifstream infile("datos/reservas.dat");
+    Reserva **array = new Reserva*[nReservas];
+    int j = 0;
+    string line;
+
+    while (getline(infile, line)){
+        istringstream ss(line);
+        string* parametros = new string[6];
+        string valor;
+        int i = 0;
+
+        while (getline(ss, valor, ';')) {
+            parametros[i] = valor;
+            i++;
+        }
+        Reserva* reserva = new Reserva(parametros[0], parametros[1], stoi(parametros[2]), getCliente(parametros[3]), getCoche(parametros[4]), getAgencia(stoi(parametros[5])));
+        array[j] = reserva;
+        j++;
+    }
+    return array;
+}
+
+Reserva **Gestor::getReservas(Cliente *c) {
+    Reserva** reservas = getReservas();
+    int count = 0;
+    for(int i = 0; i < sizeof(reservas) / sizeof(Reserva*); i++){
+        if(reservas[i]->getCliente()->getEmail().compare(c->getEmail()) == 0){
+            count++;
+        }
+    }
+    Reserva ** result = new Reserva*[count];
+    count = 0;
+    for(int i = 0; i < sizeof(reservas) / sizeof(Reserva*); i++){
+        if(reservas[i]->getCliente()->getEmail().compare(c->getEmail()) == 0){
+            result[count] = reservas[i];
+            count++;
+        }
+    }
+    return reservas;
+}

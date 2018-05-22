@@ -76,7 +76,7 @@ void Reserva::setFecha_f(string fecha_f)
 }
 string Reserva::toString(){
     stringstream ss;
-    ss << id << "," << cliente->getId() << "," << coche->getMatricula() << "," << agencia->getCodigo() << "," << fecha_i << "," << fecha_f << "\n";
+    ss << id << ";" << cliente->getId() << ";" << coche->getMatricula() << ";" << agencia->getCodigo() << ";" << fecha_i << ";" << fecha_f << "\n";
     return ss.str();
 }
 

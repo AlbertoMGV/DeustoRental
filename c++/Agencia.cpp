@@ -74,7 +74,7 @@ void Agencia::setCodigo(int codigo)
 }
 string Agencia::toString(){
     stringstream ss;
-    ss << CP << "," << ciudad << "," << pais << "," << direccion << "," << codigo << "\n";
+    ss << CP << ";" << ciudad << ";" << pais << ";" << direccion << ";" << codigo << "\n";
     return ss.str();
 }
 

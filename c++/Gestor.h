@@ -14,13 +14,13 @@ using namespace std;
 class Gestor{
 	public:
 		Gestor(bool isAdmin);
-		~Gestor();
 		Administrador* getAdministrador(string email);
 		Cliente* getCliente(string email);
 		Coche** getCoches(Agencia* agencia);
 		Agencia* getAgencia(int codigo);
 		Agencia** getAgencias();
-		Reserva* getReservas(Cliente* c);
+        Reserva** getReservas();
+        Reserva** getReservas(Cliente* c);
         void addReserva(Reserva *r);
 		void addCoche(Coche* c);
         void addAgencia(Agencia* a);
