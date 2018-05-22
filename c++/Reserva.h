@@ -1,25 +1,34 @@
-#ifndef RESERVA_H_INCLUDED
-#define RESERVA_H_INCLUDED
+#ifndef RESERVA_H
+#define RESERVA_H
 
-#include "Cliente.h"
-#include "Agencia.h"
-#include "Coche.h"
+class Reserva{
+	private:
+		int id;
+        Cliente cliente;
+        Coche coche;
+        Agencia agencia;
+        char* fecha_i;
+        char* fecha_f;
+	public:
+	    //cons&Dest
+	    Reserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia);
+	    ~Reserva();
+		//Getters
+		int getId();
+        Cliente getCliente();
+        Coche getCoche();
+        Agencia getAgencia();
+        char* getFecha_i();
+        char* getFecha_f();
+        //Setters
+        void setId();
+        void setCliente();
+        void setCoche();
+        void setAgencia();
+        void setFecha_i();
+        void setFecha_f();
 
-typedef struct{
-
-    int id;
-    Cliente cliente;
-    Coche coche;
-    Agencia agencia;
-    char* fecha_i;
-    char* fecha_f;
-
-} Reserva;
-
-Reserva* crearReserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia);
-Reserva** leerReservas();
-
-Reserva* modificarReserva();
+};
 
 
-#endif // RESERVA_H_INCLUDED
+#endif

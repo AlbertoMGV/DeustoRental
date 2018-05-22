@@ -1,18 +1,31 @@
-#ifndef AGENCIA_H_INCLUDED
-#define AGENCIA_H_INCLUDED
+#ifndef AGENCIA_H
+#define AGENCIA_H
 
-typedef struct{
+class Agencia{
+	private:
+		int CP;
+        char* ciudad;
+        char* pais;
+        char* direccion;
+        int codigo;
+	public:
+	    //Cons&Des
+		Agencia(int CP, char* Ciudad, char* pais, char* direccion, int codigo);
+		~Agencia();
+		//Getters
+		int getCP();
+        char* getCiudad();
+        char* getPais();
+        char* getDireccion();
+        int getCodigo();
+        //Setters
+        void setCP();
+        void setCiudad();
+        void setPais();
+        void setDireccion();
+        void setCodigo();
 
-    int CP;
-    char* ciudad;
-    char* pais;
-    char* direccion;
-    int codigo;
+};
 
-} Agencia;
 
-Agencia* crearAgencia(int CP, char* ciudad, char* pais, char* direccion, int codigo);
-Agencia** leerAgencia();
-Agencia* modificarAgencia();
-
-#endif // AGENCIA_H_INCLUDED
+#endif
