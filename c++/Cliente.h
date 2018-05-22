@@ -3,28 +3,31 @@
 
 #include <string>
 
+using namespace std;
+
 class Cliente{
 	private:
 		int id;
-		char* email;
-		char* pass;
-		char* nombre;
-		char* apellido;
-		char* dni;
+		string email;
+		string pass;
+		string nombre;
+		string apellido;
+		string dni;
 	public:
-		Cliente(int id, char* email, char* pass, char* nombre, char* apellido, char* dni);
-		bool comprobarContrasenya(char* pass);
+		Cliente(int id, string email, string pass, string nombre, string apellido, string dni);
+        Cliente();
+        bool comprobarContrasenya(string pass);
 		int getId();
-		char* getEmail();
-		char* getNombre();
-		char* getApellido();
-		char* getDni();
+		string getEmail();
+		string getNombre();
+		string getApellido();
+		string getDni();
 		void setId(int id);
-		void setEmail(char* email);
-		void setPass(char* pass);
-		void setNombre(char* nombre);
-		void setApellido(char* apellido);
-		void setDni(char* dni);
+		void setEmail(string email);
+		void setPass(string pass);
+		void setNombre(string nombre);
+		void setApellido(string apellido);
+		void setDni(string dni);
 		std::string toString();
 };
 

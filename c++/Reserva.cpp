@@ -1,6 +1,6 @@
 #include "Reserva.h"
 
-Reserva::Reserva(char* fecha_i, char* fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia) : coche(), cliente(), agencia(){
+Reserva::Reserva(string fecha_i, string fecha_f, int id, Cliente cliente, Coche coche, Agencia agencia) : coche(), cliente(), agencia(){
         this->id=id;
         this->cliente=cliente;
         this->coche=coche;
@@ -29,11 +29,11 @@ Agencia Reserva::getAgencia()
 {
     return agencia;
 }
-char* Reserva::getFecha_i()
+string Reserva::getFecha_i()
 {
     return fecha_i;
 }
-char* Reserva::getFecha_f()
+string Reserva::getFecha_f()
 {
     return fecha_f;
 }
@@ -54,11 +54,11 @@ void Reserva::setAgencia(Agencia agencia)
 {
     this->agencia=agencia;
 }
-void Reserva::setFecha_i(char* fecha_i)
+void Reserva::setFecha_i(string fecha_i)
 {
     this->fecha_i=fecha_i;
 }
-void Reserva::setFecha_f(char* fecha_f)
+void Reserva::setFecha_f(string fecha_f)
 {
     this->fecha_f=fecha_f;
 }

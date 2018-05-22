@@ -1,18 +1,22 @@
 #ifndef GESTOR_H
 #define GESTOR_H
 
+#include <string>
+
 #include "Administrador.h"
 #include "Cliente.h"
 #include "Coche.h"
 #include "Agencia.h"
 #include "Reserva.h"
 
+using namespace std;
+
 class Gestor{
 	public:
 		Gestor(bool isAdmin);
 		~Gestor();
-		Administrador getAdministrador(char* email);
-		Cliente getCliente(char* email);
+		Administrador getAdministrador(string email);
+		Cliente getCliente(string email);
 		Coche* getCoches(Agencia agencia);
 		Agencia getAgencia(int id);
 		Agencia* getAgencias();

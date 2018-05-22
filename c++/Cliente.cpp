@@ -1,12 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "Cliente.h"
 #include <sstream>
 
 
-Cliente::Cliente(int id, char* email, char* pass, char* nombre, char* apellido, char* dni){
+Cliente::Cliente(int id, string email, string pass, string nombre, string apellido, string dni){
 	this->id = id;
 	this->email = email;
 	this->pass = pass;
@@ -15,45 +11,51 @@ Cliente::Cliente(int id, char* email, char* pass, char* nombre, char* apellido, 
 	this->dni = dni;
 }
 
-Cliente::comprobarContrasenya(char* pass){
-	if(sizeof(pass) != sizeof(this->pass){
-		return false;
-	}else{
-		return (strcmp(this->pass, pass) == 0 ? true : false);
-	}
+Cliente::Cliente() {
+    this->id = 0;
+    this->email = "";
+    this->pass = "";
+    this->nombre = "";
+    this->apellido = "";
+    this->dni = "";
+}
+
+
+bool Cliente::comprobarContrasenya(string pass){
+    return (this->pass.compare(pass) == 0);
 }
 
 int Cliente::getId(){
 	return this->id;
 }
-char* Cliente::getEmail(){
+string Cliente::getEmail(){
 	return this->email;
 }
-char* Cliente::getNombre(){
+string Cliente::getNombre(){
 	return this->nombre;
 }
-char* Cliente::getApellido(){
+string Cliente::getApellido(){
 	return this->apellido;
 }
-char* Cliente::getDni(){
+string Cliente::getDni(){
 	return this->dni;
 }
 void Cliente::setId(int id){
 	this->id = id;
 }
-void Cliente::setEmail(char* email){
+void Cliente::setEmail(string email){
 	this->email = email;
 }
-void Cliente::setPass(char* pass){
+void Cliente::setPass(string pass){
 	this->pass = pass;
 }
-void Cliente::setNombre(char* nombre){
+void Cliente::setNombre(string nombre){
 	this->nombre = nombre;
 }
-void Cliente::setApellido(char* apellido){
+void Cliente::setApellido(string apellido){
 	this->apellido = apellido;
 }
-void Cliente::setDni(char* dni){
+void Cliente::setDni(string dni){
 	this->dni = dni;
 }
 
@@ -63,3 +65,4 @@ std::string Cliente::toString(){
 	std::string result = ss.str();
 	return result;
 }
+

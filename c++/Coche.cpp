@@ -1,10 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "Coche.h"
+#include <string>
 
-Coche::Coche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo){
+using namespace std;
+
+Coche::Coche(string marca, string modelo, string matricula, float kilometraje, int capacidad, int usuarios, string tipo){
 	this->marca = marca;
 	this->modelo = modelo;
 	this->matricula = matricula;
@@ -28,15 +27,15 @@ Coche::~Coche()
 
 }
 //getters
-char* Coche::getMarca()
+string Coche::getMarca()
 {
     return marca;
 }
-char* Coche::getModelo()
+string Coche::getModelo()
 {
     return modelo;
 }
-char* Coche::getMatricula()
+string Coche::getMatricula()
 {
     return matricula;
 }
@@ -52,21 +51,21 @@ int Coche::getUsuarios()
 {
     return usuarios;
 }
-char* Coche::getTipo()
+string Coche::getTipo()
 {
     return tipo;
 }
 //Setters
-void Coche::setMarca(char* marca)
+void Coche::setMarca(string marca)
 {
     this->marca=marca;
 }
-void Coche::setModelo(char* modelo)
+void Coche::setModelo(string modelo)
 {
     this->modelo = modelo;
 
 }
-void Coche::setMatricula(char* matricula)
+void Coche::setMatricula(string matricula)
 {
     this->matricula = matricula;
 
@@ -86,7 +85,7 @@ void Coche::setUsuarios(int usuarios)
     this->usuarios = usuarios;
 
 }
-void Coche::setTipo(char* tipo)
+void Coche::setTipo(string tipo)
 {
     this->tipo = tipo;
 }

@@ -1,36 +1,40 @@
 #ifndef COCHE_H
 #define COCHE_H
 
+#include <string>
+
+using namespace std;
+
 class Coche{
 	private:
-		char* marca;
-        char* modelo;
-        char* matricula;
+		string marca;
+        string modelo;
+        string matricula;
         float kilometraje;
         int capacidad;
         int usuarios;
-        char* tipo;
+        string tipo;
 	public:
 	    //Cons&Des
 		Coche();
-		Coche(char* marca, char* modelo, char* matricula, float kilometraje, int capacidad, int usuarios, char* tipo);
+		Coche(string marca, string modelo, string matricula, float kilometraje, int capacidad, int usuarios, string tipo);
 		~Coche();
 		//Getters
-		char* getMarca();
-        char* getModelo();
-        char* getMatricula();
+		string getMarca();
+        string getModelo();
+        string getMatricula();
         float getKilometraje();
         int getCapacidad();
         int getUsuarios();
-        char* getTipo();
+        string getTipo();
         //Setters
-        void setMarca(char* marca);
-        void setModelo(char* modelo);
-        void setMatricula(char* matricula);
+        void setMarca(string marca);
+        void setModelo(string modelo);
+        void setMatricula(string matricula);
         void setKilometraje(float kilometraje);
         void setCapacidad(int capacidad);
         void setUsuarios(int usuarios);
-        void setTipo(char* tipo);
+        void setTipo(string tipo);
 
 };
 

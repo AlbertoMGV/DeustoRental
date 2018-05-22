@@ -4,7 +4,7 @@
 
 #include "Agencia.h"
 
-Agencia::Agencia(int CP, char* ciudad, char* pais, char* direccion, int codigo){
+Agencia::Agencia(int CP, string ciudad, string pais, string direccion, int codigo){
 	this->CP = CP;
 	this->ciudad = ciudad;
 	this->pais = pais;
@@ -29,15 +29,15 @@ int Agencia::getCP()
 {
     return CP;
 }
-char* Agencia::getCiudad()
+string Agencia::getCiudad()
 {
     return ciudad;
 }
-char* Agencia::getPais()
+string Agencia::getPais()
 {
     return pais;
 }
-char* Agencia::getDireccion()
+string Agencia::getDireccion()
 {
     return direccion;
 }
@@ -50,15 +50,15 @@ void Agencia::setCP(int CP)
 {
     this->CP = CP;
 }
-void Agencia::setCiudad(char* ciudad)
+void Agencia::setCiudad(string ciudad)
 {
     this->ciudad = ciudad;
 }
-void Agencia::setPais(char* pais)
+void Agencia::setPais(string pais)
 {
     this->pais = pais;
 }
-void Agencia::setDireccion(char* direccion)
+void Agencia::setDireccion(string direccion)
 {
     this->direccion = direccion;
 }

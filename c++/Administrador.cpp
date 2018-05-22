@@ -4,25 +4,21 @@
 
 #include "Administrador.h"
 
-Administrador::Administrador(int id, char* email, char* pass){
+Administrador::Administrador(int id, string email, string pass){
 	this->id = id;
 	this->email = email;
 	this->pass = pass;
 }
 
-bool Administrador::comprobarContrasenya(char* pass){
-	if(sizeof(pass) != sizeof(this->pass)){
-		return false;
-	}else{
-		return (strcmp(this->pass, pass) == 0 ? true : false);
-	}
+bool Administrador::comprobarContrasenya(string pass){
+	return (this->pass.compare(pass) == 0);
 }
 
 int Administrador::getId(){
 	return id;
 }
 
-char* Administrador::getEmail(){
+string Administrador::getEmail(){
 	return email;
 }
 
@@ -30,11 +26,11 @@ void Administrador::setId(int id){
 	this->id = id;
 }
 
-void Administrador::setEmail(char* email){
+void Administrador::setEmail(string email){
 	this->email = email;
 }
 
-void Administrador::setPass(char* pass){
+void Administrador::setPass(string pass){
 	this->pass = pass;
 }
 

@@ -1,29 +1,33 @@
 #ifndef AGENCIA_H
 #define AGENCIA_H
 
+#include <string>
+
+using namespace std;
+
 class Agencia{
 	private:
         int CP;
-        char* ciudad;
-        char* pais;
-        char* direccion;
+        string ciudad;
+        string pais;
+        string direccion;
         int codigo;
 	public:
 	    //Cons&Des
-		Agencia(int CP, char* ciudad, char* pais, char* direccion, int codigo);
+		Agencia(int CP, string ciudad, string pais, string direccion, int codigo);
 		~Agencia();
 		Agencia();
 		//Getters
 		int getCP();
-        char* getCiudad();
-        char* getPais();
-        char* getDireccion();
+        string getCiudad();
+        string getPais();
+        string getDireccion();
         int getCodigo();
         //Setters
         void setCP(int CP);
-        void setCiudad(char* ciudad);
-        void setPais(char* pais);
-        void setDireccion(char* direccion);
+        void setCiudad(string ciudad);
+        void setPais(string pais);
+        void setDireccion(string direccion);
         void setCodigo(int codigo);
 
 };

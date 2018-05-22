@@ -1,19 +1,23 @@
 #ifndef ADMINISTRADOR_H
 #define ADMINISTRADOR_H
 
+#include <string>
+
+using namespace std;
+
 class Administrador{
 	private:
 		int id;
-		char* email;
-		char* pass;
+		string email;
+		string pass;
 	public:
-		Administrador(int id, char* email, char* pass);
-		bool comprobarContrasenya(char* pass);
+		Administrador(int id, string email, string pass);
+		bool comprobarContrasenya(string pass);
 		int getId();
-		char* getEmail();
+		string getEmail();
 		void setId(int id);
-		void setEmail(char* email);
-		void setPass(char* pass);
+		void setEmail(string email);
+		void setPass(string pass);
 };
 
 
