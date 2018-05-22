@@ -2,13 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-Cliente::Cliente(char* nombre,char* apellido,int edad,char* direccion, char* dni, char* pass){
+#include "Cliente.h"
+
+
+Cliente::Cliente(int id, char* email, char* pass, char* nombre, char* apellido, char* dni){
+	this->id = id;
+	this->email = email;
+	this->pass = pass;
 	this->nombre = nombre;
 	this->apellido = apellido;
-	this->edad = edad;
-	this->direccion = direccion;
 	this->dni = dni;
-	this->pass = pass;
 }
 
 bool comprobarContrasenya(char* pass){
@@ -19,23 +22,36 @@ bool comprobarContrasenya(char* pass){
 	}
 }
 
-int getDni(){
-	return dni;
+int getId(){
+	return this->id;
 }
-
-int getDireccion(){
-	return direccion;
+char* getEmail(){
+	return this->email;
 }
-
-void setDni(int dni){
-	this->dni = dni;
+char* getNombre(){
+	return this->nombre;
 }
-
-void setDireccion(char* direccion){
-	this->direccion = direccion;
+char* getApellido(){
+	return this->apellido;
 }
-
+char* getDni(){
+	return this->dni;
+}
+void setId(int id){
+	this->id = id;
+}
+void setEmail(char* email){
+	this->email = email;
+}
 void setPass(char* pass){
 	this->pass = pass;
 }
-#include "Cliente.h"
+void setNombre(char* nombre){
+	this->nombre = nombre;
+}
+void setApellido(char* apellido){
+	this->apellido = apellido;
+}
+void setDni(char* dni){
+	this->dni = dni;
+}
