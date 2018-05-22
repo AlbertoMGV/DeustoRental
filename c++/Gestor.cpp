@@ -184,7 +184,7 @@ void Gestor::addCoche(Coche *c) {
 void Gestor::addAdministrador(Administrador* a) {
     if(getAdministrador(a->getEmail()) == nullptr){
         ofstream adminFile;
-        adminFile.open("datos/administrador.dat", ios_base::app);
+        adminFile.open("datos/administradores.dat", ios_base::app);
         adminFile << a->toString();
     } else{
         cout << "ERROR! ADMIN YA EXISTE!" << endl;
