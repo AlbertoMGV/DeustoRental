@@ -1,48 +1,52 @@
 # depslib dependency file v1.0
-1523893612 source:c:\users\iñigo\desktop\prog 4\deustorental\cliente.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Cliente.h"
 
-1523893612 c:\users\iñigo\desktop\prog 4\deustorental\cliente.h
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\cliente.h
 
-1523893917 source:c:\users\iñigo\desktop\prog 4\deustorental\coche.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\coche.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Coche.h"
 
-1523893917 c:\users\iñigo\desktop\prog 4\deustorental\coche.h
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\coche.h
 
-1523894333 source:c:\users\iñigo\desktop\prog 4\deustorental\main.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\main.c
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
+	<stdbool.h>
 	"Administrador.h"
 	"Cliente.h"
+	"sqlite3.h"
+	<unistd.h>
 
-1523895112 c:\users\iñigo\desktop\prog 4\deustorental\administrador.h
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\administrador.h
 
-1523860332 source:c:\users\iñigo\desktop\prog 4\deustorental\administrador.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\administrador.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Administrador.h"
 
-1523893612 source:c:\users\iñigo\desktop\prog 4\deustorental\agencia.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\agencia.c
 	<stdio.h>
 	<stdlib.h>
 	"Agencia.h"
 	"string.h"
 
-1523893612 c:\users\iñigo\desktop\prog 4\deustorental\agencia.h
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\agencia.h
 
-1523893917 source:c:\users\iñigo\desktop\prog 4\deustorental\reserva.c
+1524479420 source:c:\users\iñigo\desktop\prog 4\deustorental\reserva.c
 	<stdio.h>
 	<stdlib.h>
 	"Reserva.h"
 
-1523893917 c:\users\iñigo\desktop\prog 4\deustorental\reserva.h
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\reserva.h
 	"Cliente.h"
 	"Agencia.h"
 	"Coche.h"
@@ -151,5 +155,8 @@
 	<unicode/utf16.h>
 
 1418138469 c:\users\alberto miranda\documents\workspace\codeblocks\deustorental\sqlite3.h
+	<stdarg.h>
+
+1524479420 c:\users\iñigo\desktop\prog 4\deustorental\sqlite3.h
 	<stdarg.h>
 

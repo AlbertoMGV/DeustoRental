@@ -10,8 +10,8 @@ Administrador::Administrador(int id, char* email, char* pass){
 	this->pass = pass;
 }
 
-bool comprobarContraseña(char* pass){
-	if(sizeof(pass) != sizeof(this->pass){
+bool comprobarContrasenya(char* pass){
+	if(sizeof(pass) != sizeof(this->pass)){
 		return false;
 	}else{
 		return (strcmp(this->pass, pass) == 0 ? true : false);
