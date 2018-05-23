@@ -159,9 +159,9 @@ int main() {
             cin >> lpass ;
 
         //if(user->getPass()==lpass){
-        if(true){
+        if(user->getPass()==lpass){
             correct=true;
-            cout <<"Has iniciado sesion correctamente!";
+            cout <<"Has iniciado sesion correctamente!\n";
             system("pause");
             menuUsuario(gestor->getCliente(lemail));
         }
@@ -239,14 +239,14 @@ void test(){
 
 void menuUsuario(Cliente* c)
 {
-    Gestor gestor = new Gestor(false);
+    Gestor* gestor = new Gestor(false);
     do{
     limpiarPantalla();
     cout <<"----------------------------------------------------------" << endl;
     cout <<"                DeustoRental Company!" << endl;
     cout <<"                   Menu de Cliente" << endl;
     cout <<"----------------------------------------------------------" << endl;
-    cout <<"                  Bienvenido!" << endl;
+    cout <<"                  Bienvenido "<<c->getNombre()<<" "<<c->getApellido()<<"!"<< endl;
 
     int elec;
 
@@ -265,11 +265,40 @@ void menuUsuario(Cliente* c)
 
     } while ( elec < 1 || elec > 3 );
     if (elec==1){
+        int elec1;
+        string fecha_i;
+        string fecha_f;
+
         limpiarPantalla();
         cout << "----------------------------------------------------------" << endl;
         cout << "                DeustoRental Company!" << endl;
-        cout << "                   Menu de Cliente" << endl;
+        cout << "                   Crear Reserva" << endl;
         cout << "----------------------------------------------------------" << endl;
+
+        cout <<"Introduce el CP del concesionario mas cercano:";
+        cin >> elec1;
+
+        //Agencia* aa = gestor->getAgencia(elec1);
+        Agencia* aa = new Agencia(elec1, "", "", "", 1);
+        gestor->getCoches(aa);
+
+        cout<<"Introduce el codigo del vehiculo deseado:"<<endl;
+        cin >> elec1 ;
+
+        cout<<"Introduce la fecha de inicio:"<<endl;
+        cin >> fecha_i ;
+
+        cout<<"Introduce la fecha de fin:"<<endl;
+        cin >> fecha_f ;
+
+        Coche* coche = new Coche("Ford", "GT", "0454KFD", 1250.3, 2, "Supercoche", 0);
+
+        //Reserva* r = new Reserva(fecha_i, fecha_f,elec1, c->getDni(), coche, aa);
+
+        cout<<"Reserva realizada con exito!"<<endl;
+
+
+        system("pause");
 
     }
     if (elec==2){
@@ -279,11 +308,12 @@ void menuUsuario(Cliente* c)
         cout << "                   Menu de Cliente" << endl;
         cout << "----------------------------------------------------------" << endl;
 
+        /*
         Reserva** misReservas = gestor.getReservas(c);
         for(int i = 0; i < sizeof(misReservas) / sizeof(Reserva*); i++){
             cout << misReservas[i]->toString() << endl;
         }
-        
+        */
     }
     if (elec==3){
         exit(0);

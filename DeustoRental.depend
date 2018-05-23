@@ -186,7 +186,7 @@
 1527035603 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.h
 	<string>
 
-1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
+1527072317 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
 	"Coche.h"
 	<string>
 	<sstream>
@@ -195,14 +195,14 @@
 	<string>
 	"Agencia.h"
 
-1527035108 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
+1527072180 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
 	"Gestor.h"
 	<fstream>
 	<sstream>
 	<iostream>
 	<vector>
 
-1527034764 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.h
+1527062712 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.h
 	<string>
 	"Administrador.h"
 	"Cliente.h"
@@ -210,22 +210,22 @@
 	"Agencia.h"
 	"Reserva.h"
 
-1527025540 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.h
+1527070336 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.h
 	<string>
 	"Cliente.h"
 	"Agencia.h"
 	"Coche.h"
 
-1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.cpp
+1527070336 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.cpp
 	"Reserva.h"
 	<sstream>
 
-1527035621 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.cpp
+1527070336 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.cpp
 	"Cliente.h"
 	<sstream>
 	<iostream>
 
-1527037725 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
+1527072806 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
 	"Main.h"
 	<sstream>
 	<string>
@@ -238,5 +238,6 @@
 	"Reserva.h"
 	"Gestor.h"
 
-1527037270 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.h
+1527070336 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.h
+	"Cliente.h"
 

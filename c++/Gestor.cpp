@@ -91,9 +91,10 @@ Coche** Gestor::getCoches(Agencia* agencia) {
                 i++;
             }
         }
-
+        cout<<""<<endl;
         if(stoi(parametros[6]) == agencia->getCodigo()){
             Coche* c = new Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], agencia);
+            cout<<c->toString()<<endl;
             result.push_back(c);
             found++;
         }
