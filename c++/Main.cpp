@@ -40,23 +40,23 @@ int main() {
     {
 
     limpiarPantalla();
-    printf("----------------------------------------------------------\n");
-    printf("                DeustoRental Company!\n");
-    printf("                         Inicio\n");
-    printf("----------------------------------------------------------\n");
+    cout <<"----------------------------------------------------------" << endl;
+    cout <<"                DeustoRental Company!" << endl;
+    cout <<"                         Inicio" << endl;
+    cout <<"----------------------------------------------------------" << endl;
 
 
 
-    printf("Bienvenido a DeustoRental, plataforma de alquiler de vehiculos. \n");
+    cout <<"Bienvenido a DeustoRental, plataforma de alquiler de vehiculos. " << endl;
     do
     {
 
-        printf("Que desea?\n\n");
+        cout << "Que desea?" << endl;
 
-        printf("1. Registrarse\n");
-        printf("2. Login\n");
-        printf("3. Manage\n"); //Menu para el administrador
-        printf("4. Exit\n\n");
+        cout << "1. Registrarse" << endl;
+        cout << "2. Login" << endl;
+        cout << "3. Manage" << endl; //Menu para el administrador
+        cout << "4. Exit" << endl;
 
         scanf("%d",&elec);
 
@@ -65,72 +65,63 @@ int main() {
 
     if (elec==1)
     {
-        char rnom[25];
-        char rape[25];
+        string rnom;
+        string rape;
         int redad;
-        char rdir[50];
-        char rdni[9];
-        char rpass1[20];
-        char rpass2[20];
-        boolean success=false;
+        string rdir;
+        string rdni;
+        string rpass1;
+        string rpass2;
+        boolean success = false;
 
         limpiarPantalla();
 
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                         Registro\n");
-        printf("----------------------------------------------------------\n");
+        cout << "----------------------------------------------------------" << endl;
+        cout << "                DeustoRental Company!" << endl;
+        cout << "                         Registro"  << endl;
+        cout << "----------------------------------------------------------"  << endl;
 
 
-        printf("Introduce tu nombre:");
+        cout <<"Introduce tu nombre:";
         scanf( "%s" , rnom );
-        printf("\n");
+        cout <<"" << endl;
 
-        printf("Introduce tu apellido:");
+        cout <<"Introduce tu apellido:";
         scanf( "%s" , rape );
-        printf("\n");
 
-        printf("Introduce tu edad:");
+        cout <<"Introduce tu edad:";
         scanf( "%d" , &redad );
-        printf("\n");
 
-        printf("Introduce tu direccion:");
+        cout <<"Introduce tu direccion:";
         scanf( "%s" , rdir );
-        printf("\n");
 
-        printf("Introduce tu dni:");
+        cout <<"Introduce tu dni:";
         scanf( "%s" , rdni );
-        printf("\n");
 
-        printf("Introduce una contrasena:");
+        cout <<"Introduce una contrasena:";
         scanf( "%s" , rpass1 );
-        printf("\n");
 
-        printf("Repite la contrasena:");
+        cout <<"Repite la contrasena:";
         scanf( "%s" , rpass2 );
-        printf("\n");
 
-        if(strcmp(rpass1,rpass2)!=0){
-                printf("Las contrasenas no son iguales!\n");
+        if(rpass1.compare(rpass2)!=0){
+                cout <<"Las contrasenas no son iguales!" << endl;
                 while(!success) {
-                    printf("Introduce una contrasena:");
+                    cout <<"Introduce una contrasena:";
                     scanf( "%s" , rpass1 );
-                    printf("\n");
 
-                    printf("Repite la contrasena:");
+                    cout <<"Repite la contrasena:";
                     scanf( "%s" , rpass2 );
-                    printf("\n\n");
 
-                    if(strcmp(rpass1,rpass2)==0){
+                    if(rpass1.compare(rpass2) != 0){
                         success=true;
                     }
 
                 }
         }
-        gestor->createID();
-        Cliente* c = new Cliente(gestor->createID(), rdir,rpass1,rnom,rape,rdni);
+        Cliente* c = new Cliente(gestor->createID(), rdir, rpass1, rnom, rape, rdni);
         gestor->registrarCliente(c);
-        printf("El usuario %s %s ha sido correctamente registrado\n",rnom,rape);
+        cout <<"El usuario " << rnom << " " << rape << " ha sido correctamente registrado" << endl;
         system("pause");
 
     }
@@ -138,37 +129,35 @@ int main() {
     {
         limpiarPantalla();
 
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                         Login\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                         Login" << endl;
+        cout <<"----------------------------------------------------------" << endl;
 
 
-        printf("Has elegido Logearse!\n");
+        cout <<"Has elegido Logearse!" << endl;
 
-        char lemail[50];
-        char lpass[20];
+        string lemail;
+        string lpass;
         Cliente* user;
         boolean correct=false;
 
 
 
         do{
-        printf("Introduce tu email:");
+        cout <<"Introduce tu email:";
         scanf( "%s" , lemail );
-        printf("\n");
         }while(gestor->getCliente(lemail)==nullptr);
         user=gestor->getCliente(lemail);
 
         do{
-        printf("Introduce una contrasena:");
+        cout <<"Introduce una contrasena:";
         scanf( "%s" , lpass );
-        printf("\n");
 
         //if(user->getPass()==lpass){
         if(true){
             correct=true;
-            printf("Has iniciado sesion correctamente!");
+            cout <<"Has iniciado sesion correctamente!";
             system("pause");
             menuUsuario();
         }
@@ -180,34 +169,34 @@ int main() {
     if (elec==3)
     {
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                    Management Tool\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                    Management Tool" << endl;
+        cout <<"----------------------------------------------------------" << endl;
 
 
-        char lemail[50];
-        char lpass[20];
+        string lemail;
+        string lpass;
         Administrador* admin;
         boolean correct=false;
 
 
 
         do{
-        printf("Introduce tu email:");
+        cout <<"Introduce tu email:";
         scanf( "%s" , lemail );
-        printf("\n");
-        }while(gestor->getAdministrador(lemail)==nullptr);
+
+        }while(gestor->getAdministrador(lemail) == nullptr);
         admin=gestor->getAdministrador(lemail);
 
         do{
-        printf("Introduce una contrasena:");
+        cout <<"Introduce una contrasena:";
         scanf( "%s" , lpass );
-        printf("\n");
+        cout << endl;
 
         if(admin->comprobarContrasenya(lpass)){
             correct=true;
-            printf("Has iniciado sesion correctamente!");
+            cout <<"Has iniciado sesion correctamente!";
             system("pause");
             menuAdmin();
         }
@@ -221,10 +210,10 @@ int main() {
     if (elec==4)
     {
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Hasta la proxima!\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                   Hasta la proxima!" << endl;
+        cout <<"----------------------------------------------------------" << endl;
         return 0;
     }
     }while(TRUE);
@@ -248,22 +237,22 @@ void menuUsuario()
 {
     do{
     limpiarPantalla();
-    printf("----------------------------------------------------------\n");
-    printf("                DeustoRental Company!\n");
-    printf("                   Menu de Cliente\n");
-    printf("----------------------------------------------------------\n");
-    printf("                  Bienvenido!");
+    cout <<"----------------------------------------------------------" << endl;
+    cout <<"                DeustoRental Company!" << endl;
+    cout <<"                   Menu de Cliente" << endl;
+    cout <<"----------------------------------------------------------" << endl;
+    cout <<"                  Bienvenido!" << endl;
 
     int elec;
 
     do
     {
 
-        printf("Que desea?\n\n");
+        cout <<"Que desea?\n" << endl;
 
-        printf("1. Hacer una reserva\n");
-        printf("2. Mis Reservas\n");
-        printf("3. Exit\n\n");
+        cout <<"1. Hacer una reserva" << endl;
+        cout <<"2. Mis Reservas" << endl;
+        cout <<"3. Exit\n" << endl;
 
         scanf("%d",&elec);
 
@@ -286,11 +275,11 @@ void menuAdmin()
 {
     do{
     limpiarPantalla();
-    printf("----------------------------------------------------------\n");
-    printf("                DeustoRental Company!\n");
-    printf("                   Admin Menu\n");
-    printf("----------------------------------------------------------\n");
-    printf("                  Bienvenido!");
+    cout <<"----------------------------------------------------------" << endl;
+    cout <<"                DeustoRental Company!" << endl;
+    cout <<"                   Admin Menu" << endl;
+    cout <<"----------------------------------------------------------" << endl;
+    cout <<"                  Bienvenido!";
 
     Gestor* gestor = new Gestor(true);
     int elec;
@@ -298,13 +287,13 @@ void menuAdmin()
     do
     {
 
-        printf("Que desea?\n\n");
+        cout <<"Que desea?\n" << endl;
 
-        printf("1. Crear Administrador\n");
-        printf("2. Listar Reservas\n");
-        printf("3. Listar Vehiculos\n");
-        printf("4. Listar Agencias\n");
-        printf("5. Exit\n\n");
+        cout <<"1. Crear Administrador" << endl;
+        cout <<"2. Listar Reservas" << endl;
+        cout <<"3. Listar Vehiculos" << endl;
+        cout <<"4. Listar Agencias" << endl;
+        cout <<"5. Exit\n" << endl;
 
         scanf("%d",&elec);
 
@@ -313,87 +302,85 @@ void menuAdmin()
     } while ( elec < 1 || elec > 5 );
     if (elec==1){
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Register Admin\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                   Register Admin" << endl;
+        cout <<"----------------------------------------------------------" << endl;
 
 
         int id;
-        char remail[50];
-        char rpass1[20];
-        char rpass2[20];
+        string remail;
+        string rpass1;
+        string rpass2;
         boolean success=false;
 
-        printf("Introduce un Email:");
+        cout <<"Introduce un Email:";
         scanf( "%s" , remail );
-        printf("\n");
+        cout <<"" << endl;
 
 
-        printf("Introduce una contrasena:");
+        cout <<"Introduce una contrasena:";
         scanf( "%s" , rpass1 );
-        printf("\n");
+        cout <<"" << endl;
 
-        printf("Repite la contrasena:");
+        cout <<"Repite la contrasena:";
         scanf( "%s" , rpass2 );
-        printf("\n");
+        cout <<"" << endl;
 
-        if(strcmp(rpass1,rpass2)!=0){
-                printf("Las contrasenas no son iguales!\n");
-                while(!success) {
-                    printf("Introduce una contrasena:");
-                    scanf( "%s" , rpass1 );
-                    printf("\n");
+        if(rpass1.compare(rpass2)!=0){
+            cout <<"Las contrasenas no son iguales!" << endl;
+            while(!success) {
+                cout <<"Introduce una contrasena:";
+                scanf( "%s" , rpass1 );
 
-                    printf("Repite la contrasena:");
-                    scanf( "%s" , rpass2 );
-                    printf("\n\n");
+                cout <<"Repite la contrasena:";
+                scanf( "%s" , rpass2 );
 
-                    if(strcmp(rpass1,rpass2)==0){
-                        success=true;
-                    }
-
+                if(rpass1.compare(rpass2) != 0){
+                    success=true;
                 }
+
+            }
         }
         Administrador* a = new Administrador(gestor->createAdminID(),remail,rpass1);
-        printf("El Administrador [%s] ha sido correctamente registrado\n",remail);
+        cout <<"El Administrador [" << remail <<"] ha sido correctamente registrado" << endl;
         system("pause");
     }
     if (elec==2){
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Listar Reservas\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                   Listar Reservas" << endl;
+        cout <<"----------------------------------------------------------" << endl;
         gestor->getReservas();
     }
     if (elec==3){
         int elec1;
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Listar Vehiculos\n");
-        printf("----------------------------------------------------------\n");
-        printf("Introduce el codigo de la agencia cuyos vehiculos quieres listar:");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                   Listar Vehiculos" << endl;
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"Introduce el codigo de la agencia cuyos vehiculos quieres listar:";
         scanf("%d",&elec1);
         Agencia* aa = gestor->getAgencia(elec1);
         Coche** listaCoches = gestor->getCoches(aa);
 
-        printf("Aqui tendria que estar el listado de coches jj");
+        cout <<"Aqui tendria que estar el listado de coches jj";
 
         system("pause");
     }
     if (elec==4){
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Listar Agencias\n");
-        printf("----------------------------------------------------------\n");
+        cout <<"----------------------------------------------------------" << endl;
+        cout <<"                DeustoRental Company!" << endl;
+        cout <<"                   Listar Agencias" << endl;
+        cout <<"----------------------------------------------------------" << endl;
         gestor->getAgencias();
     }
 
     if (elec==5){
-        printf("Hasta Luego!");
+        cout <<"Hasta Luego!";
         exit(0);
     }
     }while(true);
