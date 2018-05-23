@@ -267,10 +267,19 @@ void menuUsuario()
 
     } while ( elec < 1 || elec > 3 );
     if (elec==1){
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Menu de Cliente\n");
+        printf("----------------------------------------------------------\n");
 
     }
     if (elec==2){
-
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Menu de Cliente\n");
+        printf("----------------------------------------------------------\n");
     }
     if (elec==3){
         exit(0);
