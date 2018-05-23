@@ -377,7 +377,7 @@ void menuAdmin()
         printf("Introduce el codigo de la agencia cuyos vehiculos quieres listar:");
         scanf("%d",&elec1);
         Agencia* aa = gestor->getAgencia(elec1);
-        Coche** listaCoches = gestor->getCoches(aa);-
+        Coche** listaCoches = gestor->getCoches(aa);
 
         printf("Aqui tendria que estar el listado de coches jj");
 
