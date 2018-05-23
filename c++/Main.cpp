@@ -32,7 +32,9 @@ int main() {
     gestor->addAdministrador(admin);
     cout << c->toString() << endl;
     */
+    Cliente* c1 = new Cliente(7, "a@a.com", "", "", "", "");
     Gestor* gestor = new Gestor(true);
+    gestor->registrarCliente(c1);
     int elec;
 
     SetConsoleTitle("DeustoRental");
