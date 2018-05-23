@@ -32,9 +32,7 @@ int main() {
     gestor->addAdministrador(admin);
     cout << c->toString() << endl;
     */
-    Cliente* c1 = new Cliente(7, "a@a.com", "", "", "", "");
     Gestor* gestor = new Gestor(true);
-    gestor->registrarCliente(c1);
     int elec;
 
     SetConsoleTitle("DeustoRental");
@@ -54,13 +52,12 @@ int main() {
     {
 
         cout << "Que desea?" << endl;
-
         cout << "1. Registrarse" << endl;
         cout << "2. Login" << endl;
         cout << "3. Manage" << endl; //Menu para el administrador
         cout << "4. Exit" << endl;
 
-        scanf("%d",&elec);
+        cin >> elec;
 
 
     } while ( elec < 1 || elec > 4 );
@@ -166,7 +163,7 @@ int main() {
             correct=true;
             cout <<"Has iniciado sesion correctamente!";
             system("pause");
-            menuUsuario();
+            menuUsuario(gestor->getCliente(lemail));
         }
 
         }while(correct==false);
@@ -240,8 +237,9 @@ void test(){
     cout << s << endl;
 }
 
-void menuUsuario()
+void menuUsuario(Cliente* c)
 {
+    Gestor gestor = new Gestor(false);
     do{
     limpiarPantalla();
     cout <<"----------------------------------------------------------" << endl;
@@ -268,18 +266,24 @@ void menuUsuario()
     } while ( elec < 1 || elec > 3 );
     if (elec==1){
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Menu de Cliente\n");
-        printf("----------------------------------------------------------\n");
+        cout << "----------------------------------------------------------" << endl;
+        cout << "                DeustoRental Company!" << endl;
+        cout << "                   Menu de Cliente" << endl;
+        cout << "----------------------------------------------------------" << endl;
 
     }
     if (elec==2){
         limpiarPantalla();
-        printf("----------------------------------------------------------\n");
-        printf("                DeustoRental Company!\n");
-        printf("                   Menu de Cliente\n");
-        printf("----------------------------------------------------------\n");
+        cout << "----------------------------------------------------------" << endl;
+        cout << "                DeustoRental Company!" << endl;
+        cout << "                   Menu de Cliente" << endl;
+        cout << "----------------------------------------------------------" << endl;
+
+        Reserva** misReservas = gestor.getReservas(c);
+        for(int i = 0; i < sizeof(misReservas) / sizeof(Reserva*); i++){
+            cout << misReservas[i]->toString() << endl;
+        }
+        
     }
     if (elec==3){
         exit(0);

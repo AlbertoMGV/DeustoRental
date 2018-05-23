@@ -63,7 +63,7 @@ void Cliente::setDni(string dni){
 
 string Cliente::toString(){
 	stringstream ss;
-	ss << id << ";" << email << ";" << nombre << ";" << apellido << ";" << dni << "\n";
+	ss << id << ";" << email << ";" << pass << ";" << nombre << ";" << apellido << ";" << dni << endl;
 	return ss.str();
 }
 

@@ -18,7 +18,7 @@ class Reserva{
         string fecha_f;
 	public:
 	    //cons&Dest
-	    Reserva(string fecha_i, string fecha_f, int id, Cliente* cliente, Coche* coche, Agencia* agencia);
+	    Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f);
 	    ~Reserva();
         Reserva(const Reserva &r);
         //Getters

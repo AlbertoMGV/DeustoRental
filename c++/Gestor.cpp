@@ -42,7 +42,6 @@ void Gestor::registrarCliente(Cliente* c){
         ofstream clientesFile;
         clientesFile.open("datos/clientes.dat", ios_base::app);
         clientesFile << c->toString();
-        cout << c->toString();
     } else{
         cout << "ERROR! CLIENTE YA EXISTE!" << endl;
     }
@@ -59,8 +58,10 @@ Cliente* Gestor::getCliente(string email) {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 6){
+                parametros[i] = valor;
+                i++;
+            }
         }
         if(parametros[1].compare(email) == 0){
             Cliente* c = new Cliente(stoi(parametros[0]), parametros[1], parametros[2], parametros[3], parametros[4], parametros[5]);
@@ -85,8 +86,10 @@ Coche** Gestor::getCoches(Agencia* agencia) {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 7){
+                parametros[i] = valor;
+                i++;
+            }
         }
 
         if(stoi(parametros[6]) == agencia->getCodigo()){
@@ -112,8 +115,10 @@ Administrador* Gestor::getAdministrador(string email) {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 3){
+                parametros[i] = valor;
+                i++;
+            }
         }
         if(parametros[1].compare(email) == 0){
             Administrador* a = new Administrador(stoi(parametros[0]), parametros[1], parametros[2]);
@@ -137,8 +142,10 @@ Agencia **Gestor::getAgencias() {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 5){
+                parametros[i] = valor;
+                i++;
+            }
         }
         Agencia* a = new Agencia(stoi(parametros[0]), parametros[1], parametros[2], parametros[3], stoi(parametros[4]));
         array[j] = a;
@@ -187,8 +194,10 @@ Coche *Gestor::getCoche(string matricula) {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 7){
+                parametros[i] = valor;
+                i++;
+            }
         }
         if(parametros[3].compare(matricula) == 0){
             Agencia* a = getAgencia(stoi(parametros[6]));
@@ -239,10 +248,13 @@ Reserva **Gestor::getReservas() {
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            parametros[i] = valor;
-            i++;
+            if(i < 6){
+                parametros[i] = valor;
+                i++;
+            }
         }
-        Reserva* reserva = new Reserva(parametros[0], parametros[1], stoi(parametros[2]), getCliente(parametros[3]), getCoche(parametros[4]), getAgencia(stoi(parametros[5])));
+        Reserva* reserva = new Reserva(stoi(parametros[0]), getCliente(parametros[1]), getCoche(parametros[2]), getAgencia(stoi(parametros[3])), parametros[4], parametros[5]);
+        cout << reserva->toString() << endl;
         array[j] = reserva;
         j++;
     }
