@@ -42,6 +42,7 @@ void Gestor::registrarCliente(Cliente* c){
         ofstream clientesFile;
         clientesFile.open("datos/clientes.dat", ios_base::app);
         clientesFile << c->toString();
+        cout << c->toString();
     } else{
         cout << "ERROR! CLIENTE YA EXISTE!" << endl;
     }

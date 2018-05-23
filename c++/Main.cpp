@@ -68,7 +68,7 @@ int main() {
         string rnom;
         string rape;
         int redad;
-        string rdir;
+        string remail;
         string rdni;
         string rpass1;
         string rpass2;
@@ -83,46 +83,51 @@ int main() {
 
 
         cout <<"Introduce tu nombre:";
-        scanf( "%s" , rnom );
+        cin >> rnom;
         cout <<"" << endl;
 
         cout <<"Introduce tu apellido:";
-        scanf( "%s" , rape );
+        cin >> rape;
 
         cout <<"Introduce tu edad:";
-        scanf( "%d" , &redad );
+        cin >> redad;
 
-        cout <<"Introduce tu direccion:";
-        scanf( "%s" , rdir );
+        cout <<"Introduce tu email:";
+        cin >> remail;
 
         cout <<"Introduce tu dni:";
-        scanf( "%s" , rdni );
+        cin >> rdni;
 
         cout <<"Introduce una contrasena:";
-        scanf( "%s" , rpass1 );
+        cin >> rpass1;
 
         cout <<"Repite la contrasena:";
-        scanf( "%s" , rpass2 );
+        cin >> rpass2;
 
         if(rpass1.compare(rpass2)!=0){
                 cout <<"Las contrasenas no son iguales!" << endl;
                 while(!success) {
                     cout <<"Introduce una contrasena:";
-                    scanf( "%s" , rpass1 );
+                    cin >> rpass1;
 
                     cout <<"Repite la contrasena:";
-                    scanf( "%s" , rpass2 );
+                    cin >> rpass2;
 
                     if(rpass1.compare(rpass2) != 0){
                         success=true;
                     }
 
                 }
+        }else{
+            success = true;
         }
-        Cliente* c = new Cliente(gestor->createID(), rdir, rpass1, rnom, rape, rdni);
-        gestor->registrarCliente(c);
-        cout <<"El usuario " << rnom << " " << rape << " ha sido correctamente registrado" << endl;
-        system("pause");
+
+        if(success){
+            Cliente* c = new Cliente(gestor->createID(), remail, rpass1, rnom, rape, rdni);
+            gestor->registrarCliente(c);
+            cout <<"El usuario " << rnom << " " << rape << " ha sido correctamente registrado" << endl;
+            system("pause");
+        }
 
     }
     if (elec==2)
@@ -145,14 +150,14 @@ int main() {
 
 
         do{
-        cout <<"Introduce tu email:";
-        scanf( "%s" , lemail );
+            cout <<"Introduce tu email:";
+            cin >> lemail ;
         }while(gestor->getCliente(lemail)==nullptr);
         user=gestor->getCliente(lemail);
 
         do{
-        cout <<"Introduce una contrasena:";
-        scanf( "%s" , lpass );
+            cout <<"Introduce una contrasena:";
+            cin >> lpass ;
 
         //if(user->getPass()==lpass){
         if(true){
@@ -183,15 +188,15 @@ int main() {
 
 
         do{
-        cout <<"Introduce tu email:";
-        scanf( "%s" , lemail );
+            cout <<"Introduce tu email:";
+            cin >> lemail;
 
         }while(gestor->getAdministrador(lemail) == nullptr);
         admin=gestor->getAdministrador(lemail);
 
         do{
-        cout <<"Introduce una contrasena:";
-        scanf( "%s" , lpass );
+            cout <<"Introduce una contrasena:";
+            cin >> lpass;
         cout << endl;
 
         if(admin->comprobarContrasenya(lpass)){
@@ -254,7 +259,7 @@ void menuUsuario()
         cout <<"2. Mis Reservas" << endl;
         cout <<"3. Exit\n" << endl;
 
-        scanf("%d",&elec);
+        cin >> elec;
 
 
 
@@ -295,7 +300,7 @@ void menuAdmin()
         cout <<"4. Listar Agencias" << endl;
         cout <<"5. Exit\n" << endl;
 
-        scanf("%d",&elec);
+        cin >> elec;
 
 
 
@@ -315,26 +320,26 @@ void menuAdmin()
         boolean success=false;
 
         cout <<"Introduce un Email:";
-        scanf( "%s" , remail );
+        cin >> remail ;
         cout <<"" << endl;
 
 
         cout <<"Introduce una contrasena:";
-        scanf( "%s" , rpass1 );
+        cin >> rpass1 ;
         cout <<"" << endl;
 
         cout <<"Repite la contrasena:";
-        scanf( "%s" , rpass2 );
-        cout <<"" << endl;
+        cin >> rpass2;
+        cout << "" << endl;
 
         if(rpass1.compare(rpass2)!=0){
             cout <<"Las contrasenas no son iguales!" << endl;
             while(!success) {
                 cout <<"Introduce una contrasena:";
-                scanf( "%s" , rpass1 );
+                cin >> rpass1;
 
                 cout <<"Repite la contrasena:";
-                scanf( "%s" , rpass2 );
+                cin >> rpass2;
 
                 if(rpass1.compare(rpass2) != 0){
                     success=true;
@@ -362,7 +367,7 @@ void menuAdmin()
         cout <<"                   Listar Vehiculos" << endl;
         cout <<"----------------------------------------------------------" << endl;
         cout <<"Introduce el codigo de la agencia cuyos vehiculos quieres listar:";
-        scanf("%d",&elec1);
+        cin >> elec1;
         Agencia* aa = gestor->getAgencia(elec1);
         Coche** listaCoches = gestor->getCoches(aa);
 
