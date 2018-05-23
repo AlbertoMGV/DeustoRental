@@ -14,6 +14,7 @@ using namespace std;
 class Gestor{
 	public:
 		Gestor(bool isAdmin);
+		int createID();
 		Administrador* getAdministrador(string email);
 		Cliente* getCliente(string email);
 		Coche** getCoches(Agencia* agencia);

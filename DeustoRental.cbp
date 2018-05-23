@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/DeustoRental" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="c++" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,38 +32,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Administrador.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Administrador.h" />
-		<Unit filename="Agencia.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Agencia.h" />
-		<Unit filename="Cliente.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Cliente.h" />
-		<Unit filename="Coche.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Coche.h" />
-		<Unit filename="Reserva.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Reserva.h" />
 		<Unit filename="c++/Administrador.cpp" />
 		<Unit filename="c++/Administrador.h" />
 		<Unit filename="c++/Agencia.cpp" />
 		<Unit filename="c++/Agencia.h" />
+		<Unit filename="c++/Cliente.cpp" />
 		<Unit filename="c++/Cliente.h" />
 		<Unit filename="c++/Coche.cpp" />
 		<Unit filename="c++/Coche.h" />
+		<Unit filename="c++/Gestor.cpp" />
+		<Unit filename="c++/Gestor.h" />
+		<Unit filename="c++/Main.cpp" />
+		<Unit filename="c++/Main.h" />
 		<Unit filename="c++/Reserva.cpp" />
 		<Unit filename="c++/Reserva.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="c++/datos/administradores.dat" />
+		<Unit filename="c++/datos/agencias.dat" />
+		<Unit filename="c++/datos/clientes.dat" />
+		<Unit filename="c++/datos/coches.dat" />
+		<Unit filename="c++/datos/reservas.dat" />
 		<Extensions>
 			<code_completion />
 			<envvars />

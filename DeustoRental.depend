@@ -160,3 +160,83 @@
 1524479420 c:\users\iñigo\desktop\prog 4\deustorental\sqlite3.h
 	<stdarg.h>
 
+1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\administrador.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+	"Administrador.h"
+
+1527029623 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\administrador.h
+	<string>
+
+1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\agencia.cpp
+	<sstream>
+	"Agencia.h"
+
+1527029623 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\agencia.h
+	<string>
+
+1526984620 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Cliente.h"
+
+1527035603 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.h
+	<string>
+
+1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
+	"Coche.h"
+	<string>
+	<sstream>
+
+1527029623 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.h
+	<string>
+	"Agencia.h"
+
+1527035108 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
+	"Gestor.h"
+	<fstream>
+	<sstream>
+	<iostream>
+	<vector>
+
+1527034764 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.h
+	<string>
+	"Administrador.h"
+	"Cliente.h"
+	"Coche.h"
+	"Agencia.h"
+	"Reserva.h"
+
+1527025540 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.h
+	<string>
+	"Cliente.h"
+	"Agencia.h"
+	"Coche.h"
+
+1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.cpp
+	"Reserva.h"
+	<sstream>
+
+1527035621 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.cpp
+	"Cliente.h"
+	<sstream>
+	<iostream>
+
+1527037725 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
+	"Main.h"
+	<sstream>
+	<string>
+	<iostream>
+	<cstdlib>
+	<windows.h>
+	"Cliente.h"
+	"Agencia.h"
+	"Coche.h"
+	"Reserva.h"
+	"Gestor.h"
+
+1527037270 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.h
+

@@ -9,6 +9,20 @@ Gestor::Gestor(bool isAdmin){
 	this->isAdmin = isAdmin;
 }
 
+int Gestor::createID() {
+    ifstream infile("datos/clientes.dat");
+    string line;
+    int id = 0;
+
+    while (getline(infile, line)){
+        istringstream ss(line);
+        string* parametros = new string[6];
+        string valor;
+        id++;
+    }
+    return id;
+}
+
 void Gestor::registrarCliente(Cliente* c){
 	if(getCliente(c->getEmail()) == nullptr){
         ofstream clientesFile;

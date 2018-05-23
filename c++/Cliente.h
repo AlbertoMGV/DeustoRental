@@ -18,6 +18,7 @@ class Cliente{
         Cliente();
         bool comprobarContrasenya(string pass);
 		int getId();
+		string getPass();
 		string getEmail();
 		string getNombre();
 		string getApellido();

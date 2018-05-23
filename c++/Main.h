@@ -5,6 +5,8 @@
 #ifndef DEUSTORENTAL_TEST_H
 #define DEUSTORENTAL_TEST_H
 
+void limpiarPantalla();
 void test();
+void menuUsuario();
 
 #endif //DEUSTORENTAL_TEST_H

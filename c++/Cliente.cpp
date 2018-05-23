@@ -1,7 +1,6 @@
 #include "Cliente.h"
 #include <sstream>
-
-
+#include <iostream>
 Cliente::Cliente(int id, string email, string pass, string nombre, string apellido, string dni){
 	this->id = id;
 	this->email = email;
@@ -27,6 +26,9 @@ bool Cliente::comprobarContrasenya(string pass){
 
 int Cliente::getId(){
 	return this->id;
+}
+string Cliente::getPass(){
+	return this->pass;
 }
 string Cliente::getEmail(){
 	return this->email;
