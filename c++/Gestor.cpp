@@ -253,7 +253,9 @@ Reserva **Gestor::getReservas() {
                 i++;
             }
         }
-        Reserva* reserva = new Reserva(stoi(parametros[0]), getCliente(parametros[1]), getCoche(parametros[2]), getAgencia(stoi(parametros[3])), parametros[4], parametros[5]);
+        Agencia* a = getAgencia(stoi(parametros[3]));
+
+        Reserva* reserva = new Reserva(stoi(parametros[0]), getCliente(parametros[1]), getCoche(parametros[2]), a, parametros[4], parametros[5]);
         cout << reserva->toString() << endl;
         array[j] = reserva;
         j++;

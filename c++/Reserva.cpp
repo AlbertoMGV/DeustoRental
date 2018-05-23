@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-Reserva::Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f){
+Reserva::Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f) : coche(), agencia(), cliente(){
         this->id=id;
         this->cliente = cliente;
         this->coche = coche;
