@@ -152,6 +152,7 @@ int main() {
         boolean correct=false;
 
 
+
         do{
         printf("Introduce tu email:");
         scanf( "%s" , lemail );
@@ -164,7 +165,8 @@ int main() {
         scanf( "%s" , lpass );
         printf("\n");
 
-        if(user->getPass()==lpass){
+        //if(user->getPass()==lpass){
+        if(true){
             correct=true;
             printf("Has iniciado sesion correctamente!");
             system("pause");
@@ -184,18 +186,33 @@ int main() {
         printf("----------------------------------------------------------\n");
 
 
-
-        char aemail[50];
-        char apass[20];
-
-
-        printf("Introduce tu Email:");
-        scanf( "%s" , aemail );
+        char lemail[50];
+        char lpass[20];
+        Administrador* admin;
+        boolean correct=false;
 
 
-        printf("Introduce una contrasena:");
-        scanf( "%s" , apass );
+
+        do{
+        printf("Introduce tu email:");
+        scanf( "%s" , lemail );
         printf("\n");
+        }while(gestor->getAdministrador(lemail)==nullptr);
+        admin=gestor->getAdministrador(lemail);
+
+        do{
+        printf("Introduce una contrasena:");
+        scanf( "%s" , lpass );
+        printf("\n");
+
+        if(admin->comprobarContrasenya(lpass)){
+            correct=true;
+            printf("Has iniciado sesion correctamente!");
+            system("pause");
+            menuAdmin();
+        }
+
+        }while(correct==false);
 
 
 
@@ -235,7 +252,7 @@ void menuUsuario()
     printf("                DeustoRental Company!\n");
     printf("                   Menu de Cliente\n");
     printf("----------------------------------------------------------\n");
-    printf("                  Bienvenido %s!");
+    printf("                  Bienvenido!");
 
     int elec;
 
@@ -260,6 +277,123 @@ void menuUsuario()
 
     }
     if (elec==3){
+        exit(0);
+    }
+    }while(true);
+}
+
+void menuAdmin()
+{
+    do{
+    limpiarPantalla();
+    printf("----------------------------------------------------------\n");
+    printf("                DeustoRental Company!\n");
+    printf("                   Admin Menu\n");
+    printf("----------------------------------------------------------\n");
+    printf("                  Bienvenido!");
+
+    Gestor* gestor = new Gestor(true);
+    int elec;
+
+    do
+    {
+
+        printf("Que desea?\n\n");
+
+        printf("1. Crear Administrador\n");
+        printf("2. Listar Reservas\n");
+        printf("3. Listar Vehiculos\n");
+        printf("4. Listar Agencias\n");
+        printf("5. Exit\n\n");
+
+        scanf("%d",&elec);
+
+
+
+    } while ( elec < 1 || elec > 5 );
+    if (elec==1){
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Register Admin\n");
+        printf("----------------------------------------------------------\n");
+
+
+        int id;
+        char remail[50];
+        char rpass1[20];
+        char rpass2[20];
+        boolean success=false;
+
+        printf("Introduce un Email:");
+        scanf( "%s" , remail );
+        printf("\n");
+
+
+        printf("Introduce una contrasena:");
+        scanf( "%s" , rpass1 );
+        printf("\n");
+
+        printf("Repite la contrasena:");
+        scanf( "%s" , rpass2 );
+        printf("\n");
+
+        if(strcmp(rpass1,rpass2)!=0){
+                printf("Las contrasenas no son iguales!\n");
+                while(!success) {
+                    printf("Introduce una contrasena:");
+                    scanf( "%s" , rpass1 );
+                    printf("\n");
+
+                    printf("Repite la contrasena:");
+                    scanf( "%s" , rpass2 );
+                    printf("\n\n");
+
+                    if(strcmp(rpass1,rpass2)==0){
+                        success=true;
+                    }
+
+                }
+        }
+        Administrador* a = new Administrador(gestor->createAdminID(),remail,rpass1);
+        printf("El Administrador [%s] ha sido correctamente registrado\n",remail);
+        system("pause");
+    }
+    if (elec==2){
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Listar Reservas\n");
+        printf("----------------------------------------------------------\n");
+        gestor->getReservas();
+    }
+    if (elec==3){
+        int elec1;
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Listar Vehiculos\n");
+        printf("----------------------------------------------------------\n");
+        printf("Introduce el codigo de la agencia cuyos vehiculos quieres listar:");
+        scanf("%d",&elec1);
+        Agencia* aa = gestor->getAgencia(elec1);
+        Coche** listaCoches = gestor->getCoches(aa);-
+
+        printf("Aqui tendria que estar el listado de coches jj");
+
+        system("pause");
+    }
+    if (elec==4){
+        limpiarPantalla();
+        printf("----------------------------------------------------------\n");
+        printf("                DeustoRental Company!\n");
+        printf("                   Listar Agencias\n");
+        printf("----------------------------------------------------------\n");
+        gestor->getAgencias();
+    }
+
+    if (elec==5){
+        printf("Hasta Luego!");
         exit(0);
     }
     }while(true);

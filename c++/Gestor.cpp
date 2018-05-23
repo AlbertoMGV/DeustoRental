@@ -23,6 +23,20 @@ int Gestor::createID() {
     return id;
 }
 
+int Gestor::createAdminID() {
+    ifstream infile("datos/Administradores.dat");
+    string line;
+    int id = 0;
+
+    while (getline(infile, line)){
+        istringstream ss(line);
+        string* parametros = new string[6];
+        string valor;
+        id++;
+    }
+    return id;
+}
+
 void Gestor::registrarCliente(Cliente* c){
 	if(getCliente(c->getEmail()) == nullptr){
         ofstream clientesFile;

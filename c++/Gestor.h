@@ -15,6 +15,7 @@ class Gestor{
 	public:
 		Gestor(bool isAdmin);
 		int createID();
+		int createAdminID();
 		Administrador* getAdministrador(string email);
 		Cliente* getCliente(string email);
 		Coche** getCoches(Agencia* agencia);

@@ -8,5 +8,6 @@
 void limpiarPantalla();
 void test();
 void menuUsuario();
+void menuAdmin();
 
 #endif //DEUSTORENTAL_TEST_H
