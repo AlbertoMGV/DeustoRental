@@ -272,27 +272,21 @@ void menuUsuario(Cliente* c)
         int elec1;
         string fecha_i;
         string fecha_f;
-        Agencia* aa = new Agencia();
-        do{
-            limpiarPantalla();
-            cout << "----------------------------------------------------------" << endl;
-            cout << "                DeustoRental Company!" << endl;
-            cout << "                   Crear Reserva" << endl;
-            cout << "----------------------------------------------------------" << endl;
+        limpiarPantalla();
+        cout << "----------------------------------------------------------" << endl;
+        cout << "                DeustoRental Company!" << endl;
+        cout << "                   Crear Reserva" << endl;
+        cout << "----------------------------------------------------------" << endl;
 
-            cout <<"Elige la agencia en la que quieres realizar la reserva:" << endl;
-            Agencia* agencias = gestor->getAgencias();
+        cout <<"Elige la agencia en la que quieres realizar la reserva:" << endl;
+        Agencia* agencias = gestor->getAgencias();
 
-            for(int i = 0; i < gestor->countLines("datos/agencias.dat"); i++){
-                cout << "N" << i + 1 << ": " << agencias[i].getCiudad() << " (" << agencias[i].getCP() << ") - " << agencias[i].getDireccion() << ", " << agencias[i].getPais()  << endl;
-            }
+        for(int i = 0; i < gestor->countLines("datos/agencias.dat"); i++){
+            cout << "N" << i + 1 << ": " << agencias[i].getCiudad() << " (" << agencias[i].getCP() << ") - " << agencias[i].getDireccion() << ", " << agencias[i].getPais()  << endl;
+        }
 
-            cin >> elec1;
-            aa = new Agencia(agencias[elec1 - 1]);
-            if(gestor->getNcoches(aa) == 0){
-                cout << "Esa agencia no tiene coches ahora, elige otra por favor." << endl;
-            }
-        }while(gestor->getNcoches(aa) == 0);
+        cin >> elec1;
+        Agencia* aa = new Agencia(agencias[elec1 - 1]);
 
         Coche* coches = gestor->getCoches(aa);
 
@@ -312,7 +306,7 @@ void menuUsuario(Cliente* c)
 
         Coche* coche = new Coche(coches[elec1 - 1]);
 
-        Reserva* r = new Reserva(gestor->countLines("datos/reservas.dat"), c, coche, aa, fecha_i, fecha_f);
+        Reserva* r = new Reserva(gestor->countLines("datos/reservas.dat") + 1, c, coche, aa, fecha_i, fecha_f);
         gestor->addReserva(r);
 
         cout<<"Reserva realizada con exito!"<<endl;
