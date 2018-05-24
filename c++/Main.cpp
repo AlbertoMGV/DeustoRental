@@ -362,8 +362,8 @@ void menuAdmin()
 
         cout <<"1. Crear Administrador" << endl;
         cout <<"2. Listar Reservas" << endl;
-        cout <<"3. Listar Vehiculos" << endl;
-        cout <<"4. Listar Agencias" << endl;
+        cout <<"3. Anadir Vehiculo" << endl;
+        cout <<"4. Anadir Agencias" << endl;
         cout <<"5. Exit\n" << endl;
 
         cin >> elec;
@@ -423,31 +423,76 @@ void menuAdmin()
         cout <<"                DeustoRental Company!" << endl;
         cout <<"                   Listar Reservas" << endl;
         cout <<"----------------------------------------------------------" << endl;
-        gestor->getReservas();
+        Reserva* reservas = gestor->getReservas();
+        int nReservas = gestor->countLines("datos/reservas.dat");
+        for(int i = 0; i < nReservas; i++){
+            reservas[i].imprimir();
+        }
     }
     if (elec==3){
         int elec1;
         limpiarPantalla();
+        limpiarPantalla();
+        int capacidad;
+        float kilometraje;
+        string tipo, matricula, marca, modelo;
         cout <<"----------------------------------------------------------" << endl;
         cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Listar Vehiculos" << endl;
+        cout <<"                   Anadir Vehiculo" << endl;
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"Introduce el codigo de la agencia cuyos vehiculos quieres listar:";
+
+        cout <<"Elige la agencia a la que quieres añadir el vehiculo:" << endl;
+        Agencia* agencias = gestor->getAgencias();
+
+        for(int i = 0; i < gestor->countLines("datos/agencias.dat"); i++) {
+            cout << "N" << i + 1 << ": " << agencias[i].getCiudad() << " (" << agencias[i].getCP() << ") - "
+                 << agencias[i].getDireccion() << ", " << agencias[i].getPais() << endl;
+        }
         cin >> elec1;
-        Agencia* aa = gestor->getAgencia(elec1);
-        Coche* listaCoches = gestor->getCoches(aa);
-
-        cout <<"Aqui tendria que estar el listado de coches jj";
-
+        cout << "Introduce la marca del nuevo coche:" << endl ;
+        cin >> marca;
+        cout << "Introduce el modelo del nuevo coche:" << endl ;
+        char modeloC[50];
+        cin.getline(modeloC, sizeof(modeloC));
+        cin.getline(modeloC, sizeof(modeloC));
+        modelo = modeloC;
+        cout << "Introduce el kilometraje del nuevo coche:"  << endl;
+        cin >> kilometraje;
+        cout << "Introduce la matricula del nuevo coche:" << endl;
+        cin >> matricula;
+        cout << "Introduce el tipo del nuevo coche:" << endl;
+        cin >> tipo;
+        cout << "Introduce la capacidad del nuevo coche:"<< endl;
+        cin >> capacidad;
+        Coche* c = new Coche(marca, modelo, matricula, kilometraje, capacidad, tipo, gestor->getAgencia(elec1));
+        gestor->addCoche(c);
         system("pause");
     }
     if (elec==4){
         limpiarPantalla();
+        int CP, codigo;
+        string pueblo, pais, direccion;
         cout <<"----------------------------------------------------------" << endl;
         cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Listar Agencias" << endl;
+        cout <<"                   Anadir Agencias" << endl;
         cout <<"----------------------------------------------------------" << endl;
-        gestor->getAgencias();
+        cout << "Introduce el código de la nueva agencia:"<< endl;
+        cin >> codigo;
+        cout << "Introduce el codigo postal de la nueva agencia:"<< endl;
+        cin >> CP;
+        cout << "Introduce la ciudad de la nueva agencia:"<< endl;
+        cin >> pueblo;
+        cout << "Introduce el pais de la nueva agencia:"<< endl;
+        cin >> pais;
+        cout << "Introduce la direccion de la nueva agencia:"<< endl;
+        char direccionC[50];
+        cin.getline(direccionC, sizeof(direccionC));
+        cin.getline(direccionC, sizeof(direccionC));
+        direccion = direccionC;
+        Agencia* a = new Agencia(CP, pueblo, pais, direccion, codigo);
+        gestor->addAgencia(a);
+        system("pause");
+
     }
 
     if (elec==5){
