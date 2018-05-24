@@ -32,8 +32,12 @@ int main() {
     gestor->addAdministrador(admin);
     cout << c->toString() << endl;
     */
+
+
+
     Gestor* gestor = new Gestor(true);
     int elec;
+
 
     SetConsoleTitle("DeustoRental");
     do
@@ -268,32 +272,48 @@ void menuUsuario(Cliente* c)
         int elec1;
         string fecha_i;
         string fecha_f;
+        Agencia* aa = new Agencia();
+        do{
+            limpiarPantalla();
+            cout << "----------------------------------------------------------" << endl;
+            cout << "                DeustoRental Company!" << endl;
+            cout << "                   Crear Reserva" << endl;
+            cout << "----------------------------------------------------------" << endl;
 
-        limpiarPantalla();
-        cout << "----------------------------------------------------------" << endl;
-        cout << "                DeustoRental Company!" << endl;
-        cout << "                   Crear Reserva" << endl;
-        cout << "----------------------------------------------------------" << endl;
+            cout <<"Elige la agencia en la que quieres realizar la reserva:" << endl;
+            Agencia* agencias = gestor->getAgencias();
 
-        cout <<"Introduce el CP del concesionario mas cercano:";
-        cin >> elec1;
+            for(int i = 0; i < gestor->countLines("datos/agencias.dat"); i++){
+                cout << "N" << i + 1 << ": " << agencias[i].getCiudad() << " (" << agencias[i].getCP() << ") - " << agencias[i].getDireccion() << ", " << agencias[i].getPais()  << endl;
+            }
 
-        //Agencia* aa = gestor->getAgencia(elec1);
-        Agencia* aa = new Agencia(elec1, "", "", "", 1);
-        gestor->getCoches(aa);
+            cin >> elec1;
+            aa = new Agencia(agencias[elec1 - 1]);
+            if(gestor->getNcoches(aa) == 0){
+                cout << "Esa agencia no tiene coches ahora, elige otra por favor." << endl;
+            }
+        }while(gestor->getNcoches(aa) == 0);
 
-        cout<<"Introduce el codigo del vehiculo deseado:"<<endl;
+        Coche* coches = gestor->getCoches(aa);
+
+        cout<<"Introduce el numero del vehiculo deseado:"<<endl;
+
+        for(int j = 0; j < gestor->getNcoches(aa); j++){
+            cout << "N" << j + 1 << ": " <<coches[j].getMarca() << " " << coches[j].getModelo() << ", capacidad: " << coches[j].getCapacidad() << " (" << coches[j].getTipo() << ")" << endl;
+        }
+
         cin >> elec1 ;
 
-        cout<<"Introduce la fecha de inicio:"<<endl;
+        cout<<"Introduce la fecha de recogida:"<<endl;
         cin >> fecha_i ;
 
-        cout<<"Introduce la fecha de fin:"<<endl;
+        cout<<"Introduce la fecha de devolucion:"<<endl;
         cin >> fecha_f ;
 
-        Coche* coche = new Coche("Ford", "GT", "0454KFD", 1250.3, 2, "Supercoche", 0);
+        Coche* coche = new Coche(coches[elec1 - 1]);
 
-        //Reserva* r = new Reserva(fecha_i, fecha_f,elec1, c->getDni(), coche, aa);
+        Reserva* r = new Reserva(rand() % 9999 + 1, c, coche, aa, fecha_i, fecha_f);
+        gestor->addReserva(r);
 
         cout<<"Reserva realizada con exito!"<<endl;
 
@@ -414,7 +434,7 @@ void menuAdmin()
         cout <<"Introduce el codigo de la agencia cuyos vehiculos quieres listar:";
         cin >> elec1;
         Agencia* aa = gestor->getAgencia(elec1);
-        Coche** listaCoches = gestor->getCoches(aa);
+        Coche* listaCoches = gestor->getCoches(aa);
 
         cout <<"Aqui tendria que estar el listado de coches jj";
 

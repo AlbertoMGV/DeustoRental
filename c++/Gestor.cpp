@@ -72,12 +72,11 @@ Cliente* Gestor::getCliente(string email) {
     return nullptr;
 }
 
-Coche** Gestor::getCoches(Agencia* agencia) {
+
+int Gestor::getNcoches(Agencia* agencia) {
     ifstream infile("datos/coches.dat");
     string line;
     int found = 0;
-
-    vector<Coche*> result;
 
     while (getline(infile, line)){
         istringstream ss(line);
@@ -91,16 +90,40 @@ Coche** Gestor::getCoches(Agencia* agencia) {
                 i++;
             }
         }
-        cout<<""<<endl;
         if(stoi(parametros[6]) == agencia->getCodigo()){
-            Coche* c = new Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], agencia);
-            cout<<c->toString()<<endl;
-            result.push_back(c);
             found++;
         }
 
     }
-    Coche** array = new Coche*[found];
+    return found;
+}
+
+Coche* Gestor::getCoches(Agencia* agencia) {
+    ifstream infile("datos/coches.dat");
+    string line;
+    int found = 0;
+
+    vector<Coche> result;
+
+    while (getline(infile, line)){
+        istringstream ss(line);
+        string* parametros = new string[7];
+        string valor;
+        int i = 0;
+
+        while (getline(ss, valor, ';')) {
+            if(i < 7){
+                parametros[i] = valor;
+                i++;
+            }
+        }
+        if(stoi(parametros[6]) == agencia->getCodigo()){
+            result.push_back(Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], agencia));
+            found++;
+        }
+
+    }
+    Coche* array = new Coche[found];
     copy(result.begin(), result.end(), array);
     return array;
 }
@@ -129,29 +152,28 @@ Administrador* Gestor::getAdministrador(string email) {
     return nullptr;
 }
 
-Agencia **Gestor::getAgencias() {
-    int nAgencias = countLines("datos/agencias.dat");
+Agencia *Gestor::getAgencias() {
     ifstream infile("datos/agencias.dat");
-    Agencia **array = new Agencia*[nAgencias];
-    int j = 0;
+    vector<Agencia> result;
+    int found = 0;
     string line;
-
     while (getline(infile, line)){
         istringstream ss(line);
         string* parametros = new string[5];
         string valor;
         int i = 0;
-
         while (getline(ss, valor, ';')) {
             if(i < 5){
                 parametros[i] = valor;
                 i++;
             }
         }
-        Agencia* a = new Agencia(stoi(parametros[0]), parametros[1], parametros[2], parametros[3], stoi(parametros[4]));
-        array[j] = a;
-        j++;
+        result.push_back(Agencia(stoi(parametros[0]), parametros[1], parametros[2], parametros[3], stoi(parametros[4])));
+        found++;
     }
+
+    Agencia* array = new Agencia[found];
+    copy(result.begin(), result.end(), array);
     return array;
 }
 
@@ -164,7 +186,7 @@ int Gestor::countLines(string filename) {
     return count;
 }
 
-void Gestor::addAgencia(Agencia *a) {
+void Gestor::addAgencia(Agencia* a) {
     if(getAgencia(a->getCodigo()) == nullptr){
         ofstream agenciasFile;
         agenciasFile.open("datos/agencias.dat", ios_base::app);
@@ -174,11 +196,11 @@ void Gestor::addAgencia(Agencia *a) {
     }
 }
 
-Agencia *Gestor::getAgencia(int codigo) {
-    Agencia** agencias = getAgencias();
+Agencia* Gestor::getAgencia(int codigo) {
+    Agencia* agencias = getAgencias();
     for(int i = 0; i < sizeof(agencias) / sizeof(Agencia*); i++){
-        if(agencias[i]->getCodigo() == codigo){
-            return agencias[i];
+        if(agencias[i].getCodigo() == codigo){
+            return new Agencia(agencias[i]);
         }
     }
     return nullptr;
@@ -235,11 +257,10 @@ void Gestor::addReserva(Reserva *r) {
     reservasFile.open("datos/reservas.dat", ios_base::app);
     reservasFile << r->toString();
 }
-Reserva **Gestor::getReservas() {
+Reserva *Gestor::getReservas() {
     int nReservas = countLines("datos/reservas.dat");
     ifstream infile("datos/reservas.dat");
-    Reserva **array = new Reserva*[nReservas];
-    int j = 0;
+    Reserva* reservas = Reserva[nReservas];
     string line;
 
     while (getline(infile, line)){

@@ -1,6 +1,9 @@
 #include <sstream>
+#include <iostream>
 
 #include "Agencia.h"
+
+using namespace std;
 
 Agencia::Agencia(int CP, string ciudad, string pais, string direccion, int codigo){
 	this->CP = CP;
