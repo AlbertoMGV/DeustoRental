@@ -1,14 +1,24 @@
 #include "Reserva.h"
 
 #include <sstream>
+#include <iostream>
 
-Reserva::Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f) : coche(), agencia(), cliente(){
+Reserva::Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f){
         this->id=id;
         this->cliente = cliente;
         this->coche = coche;
         this->agencia = agencia;
         this->fecha_i = fecha_i;
         this->fecha_f = fecha_f;
+}
+
+Reserva::Reserva(){
+    this->id= 0;
+    this->cliente = nullptr;
+    this->coche = nullptr;
+    this->agencia = nullptr;
+    this->fecha_i = "";
+    this->fecha_f = "";
 }
 Reserva::~Reserva()
 {
@@ -78,5 +88,9 @@ string Reserva::toString(){
     stringstream ss;
     ss << id << ";" << cliente->getEmail() << ";" << coche->getMatricula() << ";" << agencia->getCodigo() << ";" << fecha_i << ";" << fecha_f << "\n";
     return ss.str();
+}
+
+void Reserva::imprimir() {
+    cout << "Id de reserva: " << id << ", coche: " << coche->getMatricula() << " " << coche->getMarca() << " " << coche->getModelo() << " (" << fecha_i << " - " << fecha_f << ")" << endl;
 }
 

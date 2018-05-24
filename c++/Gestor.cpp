@@ -198,7 +198,7 @@ void Gestor::addAgencia(Agencia* a) {
 
 Agencia* Gestor::getAgencia(int codigo) {
     Agencia* agencias = getAgencias();
-    for(int i = 0; i < sizeof(agencias) / sizeof(Agencia*); i++){
+    for(int i = 0; i < countLines("datos/agencias.dat"); i++){
         if(agencias[i].getCodigo() == codigo){
             return new Agencia(agencias[i]);
         }
@@ -209,26 +209,25 @@ Agencia* Gestor::getAgencia(int codigo) {
 Coche *Gestor::getCoche(string matricula) {
     ifstream infile("datos/coches.dat");
     string line;
-
-    while (getline(infile, line)){
+    while (getline(infile, line)) {
         istringstream ss(line);
-        string* parametros = new string[7];
+        string *parametros = new string[7];
         string valor;
         int i = 0;
 
         while (getline(ss, valor, ';')) {
-            if(i < 7){
+            if (i < 7) {
                 parametros[i] = valor;
                 i++;
             }
         }
-        if(parametros[3].compare(matricula) == 0){
-            Agencia* a = getAgencia(stoi(parametros[6]));
-            Coche* c = new Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], a);
-            return c;
+        if (parametros[2].compare(matricula) == 0) {
+            Agencia *agencia = getAgencia(stoi(parametros[6]));
+            return new  Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]),
+                              parametros[5], agencia);
         }
-    }
 
+    }
     return nullptr;
 }
 
@@ -258,17 +257,14 @@ void Gestor::addReserva(Reserva *r) {
     reservasFile << r->toString();
 }
 Reserva *Gestor::getReservas() {
-    int nReservas = countLines("datos/reservas.dat");
     ifstream infile("datos/reservas.dat");
-    Reserva* reservas = Reserva[nReservas];
+    vector<Reserva> reservas;
     string line;
-
     while (getline(infile, line)){
         istringstream ss(line);
         string* parametros = new string[6];
         string valor;
         int i = 0;
-
         while (getline(ss, valor, ';')) {
             if(i < 6){
                 parametros[i] = valor;
@@ -276,30 +272,47 @@ Reserva *Gestor::getReservas() {
             }
         }
         Agencia* a = getAgencia(stoi(parametros[3]));
-
-        Reserva* reserva = new Reserva(stoi(parametros[0]), getCliente(parametros[1]), getCoche(parametros[2]), a, parametros[4], parametros[5]);
-        cout << reserva->toString() << endl;
-        array[j] = reserva;
-        j++;
+        Cliente* c = getCliente(parametros[1]);
+        Coche* coche = getCoche(parametros[2]);
+        reservas.push_back(Reserva(stoi(parametros[0]), c, coche, a, parametros[4], parametros[5]));
     }
-    return array;
+    Reserva* resultado = new Reserva[countLines("datos/reservas.dat")];
+    copy(reservas.begin(), reservas.end(), resultado);
+    return resultado;
 }
 
-Reserva **Gestor::getReservas(Cliente *c) {
-    Reserva** reservas = getReservas();
+Reserva *Gestor::getReservas(Cliente *c) {
+    int nReservas = countLines("datos/reservas.dat");
+    string email = c->getEmail();
+    Reserva* reservas = getReservas();
     int count = 0;
-    for(int i = 0; i < sizeof(reservas) / sizeof(Reserva*); i++){
-        if(reservas[i]->getCliente()->getEmail().compare(c->getEmail()) == 0){
+    for(int i = 0; i < nReservas; i++){
+        if(reservas[i].getCliente()->getEmail().compare(email) == 0){
             count++;
         }
     }
-    Reserva ** result = new Reserva*[count];
+    Reserva * result = new Reserva[count];
     count = 0;
-    for(int i = 0; i < sizeof(reservas) / sizeof(Reserva*); i++){
-        if(reservas[i]->getCliente()->getEmail().compare(c->getEmail()) == 0){
+    for(int i = 0; i < nReservas; i++){
+        if(reservas[i].getCliente()->getEmail().compare(email) == 0){
             result[count] = reservas[i];
             count++;
         }
     }
-    return reservas;
+    return result;
+}
+int Gestor::getNReservas(Cliente *c) {
+    int nReservas = countLines("datos/reservas.dat");
+    Reserva* reservas = getReservas();
+    int count = 0;
+    for(int i = 0; i < nReservas; i++){
+        if(reservas[i].getCliente()->getEmail().compare(c->getEmail()) == 0){
+            count++;
+        }
+    }
+    return count;
+}
+
+Coche *Gestor::getCoches() {
+    return nullptr;
 }

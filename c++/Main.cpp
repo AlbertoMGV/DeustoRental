@@ -312,7 +312,7 @@ void menuUsuario(Cliente* c)
 
         Coche* coche = new Coche(coches[elec1 - 1]);
 
-        Reserva* r = new Reserva(rand() % 9999 + 1, c, coche, aa, fecha_i, fecha_f);
+        Reserva* r = new Reserva(gestor->countLines("datos/reservas.dat"), c, coche, aa, fecha_i, fecha_f);
         gestor->addReserva(r);
 
         cout<<"Reserva realizada con exito!"<<endl;
@@ -328,12 +328,13 @@ void menuUsuario(Cliente* c)
         cout << "                   Menu de Cliente" << endl;
         cout << "----------------------------------------------------------" << endl;
 
-        /*
-        Reserva** misReservas = gestor.getReservas(c);
-        for(int i = 0; i < sizeof(misReservas) / sizeof(Reserva*); i++){
-            cout << misReservas[i]->toString() << endl;
+
+        Reserva* misReservas = gestor->getReservas(c);
+        int nReservas = gestor->getNReservas(c);
+        for(int i = 0; i < nReservas; i++){
+            misReservas[i].imprimir();
         }
-        */
+        system("pause");
     }
     if (elec==3){
         exit(0);

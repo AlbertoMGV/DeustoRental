@@ -19,7 +19,8 @@ class Reserva{
 	public:
 	    //cons&Dest
 	    Reserva(int id, Cliente* cliente, Coche* coche,  Agencia* agencia, string fecha_i, string fecha_f);
-	    ~Reserva();
+        Reserva();
+        ~Reserva();
         Reserva(const Reserva &r);
         //Getters
 		int getId();
@@ -28,6 +29,7 @@ class Reserva{
         Agencia* getAgencia();
         string getFecha_i();
         string getFecha_f();
+        void imprimir();
         //Setters
         void setId(int id);
         void setCliente(Cliente* cliente);

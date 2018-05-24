@@ -18,13 +18,15 @@ class Gestor{
 		int createAdminID();
 		Administrador* getAdministrador(string email);
 		Cliente* getCliente(string email);
-		Coche* getCoches(Agencia* agencia);
+        Coche* getCoches();
+        Coche* getCoches(Agencia* agencia);
 		int getNcoches(Agencia* agencia);
 		Agencia* getAgencia(int codigo);
 		Agencia* getAgencias();
         Reserva* getReservas();
         Reserva* getReservas(Cliente* c);
-        void addReserva(Reserva *r);
+		int getNReservas(Cliente* c);
+		void addReserva(Reserva *r);
 		void addCoche(Coche* c);
         void addAgencia(Agencia* a);
 		void addAdministrador(Administrador* a);
