@@ -105,6 +105,7 @@ Coche* Gestor::getCoches(Agencia* agencia) {
 
     vector<Coche> result;
 
+
     while (getline(infile, line)){
         istringstream ss(line);
         string* parametros = new string[7];
@@ -119,12 +120,15 @@ Coche* Gestor::getCoches(Agencia* agencia) {
         }
         if(stoi(parametros[6]) == agencia->getCodigo()){
             result.push_back(Coche(parametros[0], parametros[1], parametros[2], stof(parametros[3]), stoi(parametros[4]), parametros[5], agencia));
+
             found++;
         }
 
     }
+
     Coche* array = new Coche[found];
     copy(result.begin(), result.end(), array);
+
     return array;
 }
 

@@ -100,7 +100,7 @@ void Coche::setAgencia(Agencia *a) {
 
 string Coche::toString(){
     stringstream ss;
-    ss << ";" << marca << ";" << modelo << ";" << matricula << ";" << kilometraje << ";" << capacidad  << ";" << tipo << agencia->getCodigo() << "\n";
+    ss << marca << ";" << modelo << ";" << matricula << ";" << kilometraje << ";" << capacidad  << ";" << tipo <<";"<< agencia->getCodigo() << "\n";
     return ss.str();
 }
 

@@ -347,7 +347,7 @@ void menuAdmin()
     cout <<"|                DeustoRental Company!                   |" << endl;
     cout <<"|                   Admin Menu                           |" << endl;
     cout <<"----------------------------------------------------------" << endl;
-    cout <<"                  Bienvenido!";
+    cout <<"                    Bienvenido!";
 
     Gestor* gestor = new Gestor(true);
     int elec;
@@ -425,6 +425,7 @@ void menuAdmin()
         for(int i = 0; i < nReservas; i++){
             reservas[i].imprimir();
         }
+        system("pause");
     }
     if (elec==3){
         int elec1;
@@ -463,6 +464,7 @@ void menuAdmin()
         cin >> capacidad;
         Coche* c = new Coche(marca, modelo, matricula, kilometraje, capacidad, tipo, gestor->getAgencia(elec1));
         gestor->addCoche(c);
+        cout<<"El vehiculo "<<c->getMarca()<<" "<<c->getModelo()<<" ["<<c->getMatricula()<<"] se ha anadido!"<<endl;
         system("pause");
     }
     if (elec==4){
@@ -488,6 +490,7 @@ void menuAdmin()
         direccion = direccionC;
         Agencia* a = new Agencia(CP, pueblo, pais, direccion, codigo);
         gestor->addAgencia(a);
+        cout<<"La Agencia en "<<pueblo<<" con el codigo "<<codigo<<" se ha anadido!"<<endl;
         system("pause");
 
     }

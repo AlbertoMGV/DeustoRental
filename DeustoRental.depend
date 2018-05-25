@@ -187,7 +187,7 @@
 1527035603 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.h
 	<string>
 
-1527238601 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
+1527245329 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
 	"Coche.h"
 	<string>
 	<sstream>
@@ -196,7 +196,7 @@
 	<string>
 	"Agencia.h"
 
-1527238601 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
+1527244998 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
 	"Gestor.h"
 	<fstream>
 	<sstream>
@@ -227,7 +227,7 @@
 	<sstream>
 	<iostream>
 
-1527241929 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
+1527245559 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
 	"Main.h"
 	<sstream>
 	<string>
