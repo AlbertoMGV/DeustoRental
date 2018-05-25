@@ -45,8 +45,8 @@ int main() {
 
     limpiarPantalla();
     cout <<"----------------------------------------------------------" << endl;
-    cout <<"                DeustoRental Company!" << endl;
-    cout <<"                         Inicio" << endl;
+    cout <<"|                DeustoRental Company!                   |" << endl;
+    cout <<"|                         Inicio                         |" << endl;
     cout <<"----------------------------------------------------------" << endl;
 
 
@@ -80,8 +80,8 @@ int main() {
         limpiarPantalla();
 
         cout << "----------------------------------------------------------" << endl;
-        cout << "                DeustoRental Company!" << endl;
-        cout << "                         Registro"  << endl;
+        cout << "|                DeustoRental Company!                   |" << endl;
+        cout << "|                         Registro                       |"  << endl;
         cout << "----------------------------------------------------------"  << endl;
 
 
@@ -138,8 +138,8 @@ int main() {
         limpiarPantalla();
 
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                         Login" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                        Login                           |" << endl;
         cout <<"----------------------------------------------------------" << endl;
 
 
@@ -178,8 +178,8 @@ int main() {
     {
         limpiarPantalla();
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                    Management Tool" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Management Tool                      |" << endl;
         cout <<"----------------------------------------------------------" << endl;
 
 
@@ -219,8 +219,8 @@ int main() {
     {
         limpiarPantalla();
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Hasta la proxima!" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Hasta la proxima!                    |" << endl;
         cout <<"----------------------------------------------------------" << endl;
         return 0;
     }
@@ -247,8 +247,8 @@ void menuUsuario(Cliente* c)
     do{
     limpiarPantalla();
     cout <<"----------------------------------------------------------" << endl;
-    cout <<"                DeustoRental Company!" << endl;
-    cout <<"                   Menu de Cliente" << endl;
+    cout <<"|                DeustoRental Company!                   |" << endl;
+    cout <<"|                  Menu de Cliente                       |" << endl;
     cout <<"----------------------------------------------------------" << endl;
     cout <<"                  Bienvenido "<<c->getNombre()<<" "<<c->getApellido()<<"!"<< endl;
 
@@ -274,8 +274,8 @@ void menuUsuario(Cliente* c)
         string fecha_f;
         limpiarPantalla();
         cout << "----------------------------------------------------------" << endl;
-        cout << "                DeustoRental Company!" << endl;
-        cout << "                   Crear Reserva" << endl;
+        cout << "|                DeustoRental Company!                   |" << endl;
+        cout << "|                   Crear Reserva                        |" << endl;
         cout << "----------------------------------------------------------" << endl;
 
         cout <<"Elige la agencia en la que quieres realizar la reserva:" << endl;
@@ -318,8 +318,8 @@ void menuUsuario(Cliente* c)
     if (elec==2){
         limpiarPantalla();
         cout << "----------------------------------------------------------" << endl;
-        cout << "                DeustoRental Company!" << endl;
-        cout << "                   Menu de Cliente" << endl;
+        cout << "|                DeustoRental Company!                   |" << endl;
+        cout << "|                   Menu de Cliente                      |" << endl;
         cout << "----------------------------------------------------------" << endl;
 
 
@@ -341,8 +341,8 @@ void menuAdmin()
     do{
     limpiarPantalla();
     cout <<"----------------------------------------------------------" << endl;
-    cout <<"                DeustoRental Company!" << endl;
-    cout <<"                   Admin Menu" << endl;
+    cout <<"|                DeustoRental Company!                   |" << endl;
+    cout <<"|                   Admin Menu                           |" << endl;
     cout <<"----------------------------------------------------------" << endl;
     cout <<"                  Bienvenido!";
 
@@ -368,8 +368,8 @@ void menuAdmin()
     if (elec==1){
         limpiarPantalla();
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Register Admin" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Register Admin                       |" << endl;
         cout <<"----------------------------------------------------------" << endl;
 
 
@@ -414,8 +414,8 @@ void menuAdmin()
     if (elec==2){
         limpiarPantalla();
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Listar Reservas" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Listar Reservas                      |" << endl;
         cout <<"----------------------------------------------------------" << endl;
         Reserva* reservas = gestor->getReservas();
         int nReservas = gestor->countLines("datos/reservas.dat");
@@ -431,8 +431,8 @@ void menuAdmin()
         float kilometraje;
         string tipo, matricula, marca, modelo;
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Anadir Vehiculo" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Anadir Vehiculo                      |" << endl;
         cout <<"----------------------------------------------------------" << endl;
 
         cout <<"Elige la agencia a la que quieres añadir el vehiculo:" << endl;
@@ -467,8 +467,8 @@ void menuAdmin()
         int CP, codigo;
         string pueblo, pais, direccion;
         cout <<"----------------------------------------------------------" << endl;
-        cout <<"                DeustoRental Company!" << endl;
-        cout <<"                   Anadir Agencias" << endl;
+        cout <<"|                DeustoRental Company!                   |" << endl;
+        cout <<"|                   Anadir Agencias                      |" << endl;
         cout <<"----------------------------------------------------------" << endl;
         cout << "Introduce el código de la nueva agencia:"<< endl;
         cin >> codigo;

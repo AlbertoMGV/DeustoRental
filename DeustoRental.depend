@@ -170,8 +170,9 @@
 1527029623 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\administrador.h
 	<string>
 
-1527029623 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\agencia.cpp
+1527202083 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\agencia.cpp
 	<sstream>
+	<iostream>
 	"Agencia.h"
 
 1527029623 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\agencia.h
@@ -186,7 +187,7 @@
 1527035603 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.h
 	<string>
 
-1527072317 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
+1527238601 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\coche.cpp
 	"Coche.h"
 	<string>
 	<sstream>
@@ -195,14 +196,14 @@
 	<string>
 	"Agencia.h"
 
-1527072180 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
+1527238601 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.cpp
 	"Gestor.h"
 	<fstream>
 	<sstream>
 	<iostream>
 	<vector>
 
-1527062712 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.h
+1527238601 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\gestor.h
 	<string>
 	"Administrador.h"
 	"Cliente.h"
@@ -210,22 +211,23 @@
 	"Agencia.h"
 	"Reserva.h"
 
-1527070336 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.h
+1527238601 c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.h
 	<string>
 	"Cliente.h"
 	"Agencia.h"
 	"Coche.h"
 
-1527070336 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.cpp
+1527238601 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\reserva.cpp
 	"Reserva.h"
 	<sstream>
+	<iostream>
 
 1527070336 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\cliente.cpp
 	"Cliente.h"
 	<sstream>
 	<iostream>
 
-1527072806 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
+1527239427 source:c:\users\alberto miranda\documents\programacion\codeblocks\deustorental\c++\main.cpp
 	"Main.h"
 	<sstream>
 	<string>
