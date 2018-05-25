@@ -222,7 +222,8 @@ int main() {
         cout <<"|                DeustoRental Company!                   |" << endl;
         cout <<"|                   Hasta la proxima!                    |" << endl;
         cout <<"----------------------------------------------------------" << endl;
-        return 0;
+        exit(0);
+
     }
     }while(TRUE);
 }
