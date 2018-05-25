@@ -321,14 +321,16 @@ void menuUsuario(Cliente* c)
         cout << "----------------------------------------------------------" << endl;
         cout << "|                DeustoRental Company!                   |" << endl;
         cout << "|                   Menu de Cliente                      |" << endl;
-        cout << "----------------------------------------------------------" << endl;
-
-
+        cout << "----------------------------------------------------------\n" << endl;
+        int i;
+        cout << "Mis Reservas:" << endl;
         Reserva* misReservas = gestor->getReservas(c);
         int nReservas = gestor->getNReservas(c);
-        for(int i = 0; i < nReservas; i++){
+        for(i = 0; i < nReservas; i++){
             misReservas[i].imprimir();
         }
+        cout <<""<< endl;
+        cout << "Mostrando "<<i<<" de "<<i<<" reservas." << endl;
         system("pause");
     }
     if (elec==3){
