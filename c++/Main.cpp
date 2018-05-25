@@ -200,7 +200,7 @@ int main() {
         do{
             cout <<"Introduce una contrasena:";
             cin >> lpass;
-        cout << endl;
+            cout << endl;
 
         if(admin->comprobarContrasenya(lpass)){
             correct=true;
@@ -331,7 +331,7 @@ void menuUsuario(Cliente* c)
         system("pause");
     }
     if (elec==3){
-        exit(0);
+        main();
     }
     }while(true);
 }
@@ -490,8 +490,7 @@ void menuAdmin()
     }
 
     if (elec==5){
-        cout <<"Hasta Luego!";
-        exit(0);
+        main();
     }
     }while(true);
 }
